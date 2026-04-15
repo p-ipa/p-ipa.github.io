@@ -157,7 +157,12 @@
     a:hover {
       text-decoration: underline;
     }
-
+.search-help {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 6px;
+}
+    
     @media (max-width: 980px) {
       .search-layout {
         grid-template-columns: 1fr;
@@ -166,11 +171,6 @@
       .filters-box {
         min-width: 0;
       }
-      .search-help {
-  font-size: 0.82rem;
-  color: var(--muted);
-  margin-top: 6px;
-}
     }
   </style>
 </head>
@@ -227,6 +227,7 @@
         <thead>
           <tr>
             <th>Nom</th>
+            <th>Type</th>
             <th>Statut réglementaire</th>
             <th>Classe</th>
             <th>Domaine IPA</th>
