@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
@@ -250,21 +250,85 @@
   <script>
     const entries = [
       {
-        nom: "Paracétamol",
-        statut: "Classe autorisée",
-        classe: "Antalgique palier 1",
-        domaines: ["Toutes les mentions"],
-        usage: "Douleur légère à modérée, fièvre.",
-        remarques: "CI/prudence : insuffisance hépatique sévère, alcoolisation chronique, surdosage. EI principaux : hépatotoxicité surtout en cas de dépassement de dose. Surveillance : dose totale/jour, terrain hépatique, cumul avec autres spécialités contenant du paracétamol."
+      nom: "Paracétamol",
+      statut: "Classe autorisée",
+      classe: `Antalgique palier 1 — <a href="https://www.vidal.fr/maladies/douleurs-fievres/prise-charge-douleur/medicament-douleur-legere.html" target="_blank">selon VIDAL</a>`,
+      domaines: ["Toutes les mentions"],
+      usage: "Douleur légère à modérée, fièvre.",
+      remarques: "CI/prudence : insuffisance hépatique sévère, alcoolisme chronique. EI principaux : rares aux doses usuelles ; hépatotoxicité en cas de surdosage. Surveillance : dose maximale (≤ 3 g/j sans avis médical), cumul avec autres spécialités contenant du paracétamol."
       },
       {
-        nom: "Ibuprofène",
-        statut: "Classe autorisée",
-        classe: "Antalgique palier 1",
-        domaines: ["Toutes les mentions"],
-        usage: "Douleur, inflammation, fièvre.",
-        remarques: "CI/prudence : ulcère gastro-duodénal évolutif, insuffisance rénale, insuffisance cardiaque décompensée, grossesse à partir du 6e mois, déshydratation. EI principaux : douleurs gastriques, nausées, risque digestif, rénal et cardiovasculaire selon terrain. Surveillance : durée courte, terrain digestif/rénal, hydratation, co-prescriptions."
+      nom: "Ibuprofène",
+      statut: "Classe autorisée",
+      classe: `Antalgique palier 1 — <a href="https://www.vidal.fr/maladies/douleurs-fievres/prise-charge-douleur/medicament-douleur-legere.html" target="_blank">selon VIDAL</a>`,
+      domaines: ["Toutes les mentions"],
+      usage: "Douleur légère à modérée, inflammation, fièvre.",
+      remarques: "CI/prudence : ulcère gastro-duodénal, insuffisance rénale, grossesse à partir du 6e mois, terrain hémorragique. EI principaux : douleurs gastriques, nausées, hémorragie digestive, insuffisance rénale. Surveillance : durée courte, fonction rénale, tolérance digestive."
       },
+      {
+      nom: "Acide méfénamique",
+      statut: "Classe autorisée",
+      classe: `Antalgique palier 1 — <a href="https://www.vidal.fr/maladies/douleurs-fievres/prise-charge-douleur/medicament-douleur-legere.html" target="_blank">selon VIDAL</a>`,
+      domaines: ["Toutes les mentions"],
+      usage: "Douleur légère à modérée.",
+      remarques: "CI/prudence : ulcère gastro-duodénal, insuffisance rénale, grossesse à partir du 6e mois, terrain hémorragique. EI principaux : douleurs gastriques, nausées, hémorragie digestive, insuffisance rénale. Surveillance : terrain digestif, fonction rénale, durée courte."
+    },
+    {
+      nom: "Acide niflumique",
+      statut: "Classe autorisée",
+      classe: `Antalgique palier 1 — <a href="https://www.vidal.fr/maladies/douleurs-fievres/prise-charge-douleur/medicament-douleur-legere.html" target="_blank">selon VIDAL</a>`,
+    domaines: ["Toutes les mentions"],
+      usage: "Douleur légère à modérée.",
+      remarques: "CI/prudence : ulcère gastro-duodénal, insuffisance rénale, grossesse à partir du 6e mois, terrain allergique aux AINS. EI principaux : douleurs gastriques, diarrhée, rash, insuffisance rénale, hémorragie digestive. Surveillance : tolérance digestive, fonction rénale, durée courte."
+    },
+    {
+      nom: "Acide tiaprofénique",
+      statut: "Classe autorisée",
+      classe: `Antalgique palier 1 — <a href="https://www.vidal.fr/maladies/douleurs-fievres/prise-charge-douleur/medicament-douleur-legere.html" target="_blank">selon VIDAL</a>`,
+      domaines: ["Toutes les mentions"],
+      usage: "Douleur légère à modérée.",
+      remarques: "CI/prudence : ulcère gastro-duodénal, insuffisance rénale, grossesse à partir du 6e mois. EI principaux : douleurs gastriques, nausées, hémorragie digestive, insuffisance rénale ; cystite rare mais décrite. Surveillance : tolérance digestive, fonction rénale, durée courte."
+    },
+    {
+      nom: "Fénoprofène",
+      statut: "Classe autorisée",
+      classe: `Antalgique palier 1 — <a href="https://www.vidal.fr/maladies/douleurs-fievres/prise-charge-douleur/medicament-douleur-legere.html" target="_blank">selon VIDAL</a>`,
+      domaines: ["Toutes les mentions"],
+      usage: "Douleur légère à modérée.",
+      remarques: "CI/prudence : ulcère gastro-duodénal, insuffisance rénale, grossesse à partir du 6e mois. EI principaux : douleurs gastriques, nausées, hémorragie digestive, insuffisance rénale, réactions cutanées. Surveillance : terrain digestif et rénal, durée courte."
+    },
+    {
+      nom: "Kétoprofène",
+      statut: "Classe autorisée",
+      classe: `Antalgique palier 1 — <a href="https://www.vidal.fr/maladies/douleurs-fievres/prise-charge-douleur/medicament-douleur-legere.html" target="_blank">selon VIDAL</a>`,
+      domaines: ["Toutes les mentions"],
+      usage: "Douleur légère à modérée.",
+      remarques: "CI/prudence : ulcère gastro-duodénal, insuffisance rénale, grossesse à partir du 6e mois, terrain hémorragique. EI principaux : douleurs gastriques, nausées, hémorragie digestive, insuffisance rénale, photosensibilité selon forme. Surveillance : terrain digestif, fonction rénale, durée courte."
+    },
+    {
+      nom: "Naproxène",
+      statut: "Classe autorisée",
+      classe: `Antalgique palier 1 — <a href="https://www.vidal.fr/maladies/douleurs-fievres/prise-charge-douleur/medicament-douleur-legere.html" target="_blank">selon VIDAL</a>`,
+      domaines: ["Toutes les mentions"],
+      usage: "Douleur légère à modérée.",
+      remarques: "CI/prudence : ulcère gastro-duodénal, insuffisance rénale, grossesse à partir du 6e mois, terrain hémorragique. EI principaux : douleurs gastriques, nausées, hémorragie digestive, insuffisance rénale. Surveillance : terrain digestif, fonction rénale, durée courte."
+    },
+    {
+      nom: "Acide acétylsalicylique",
+      statut: "Classe autorisée",
+      classe: `Antalgique palier 1 — <a href="https://www.vidal.fr/maladies/douleurs-fievres/prise-charge-douleur/medicament-douleur-legere.html" target="_blank">selon VIDAL</a>`,
+      domaines: ["Toutes les mentions"],
+      usage: "Douleur légère à modérée, fièvre.",
+      remarques: "CI/prudence : ulcère gastro-duodénal, risque hémorragique, allergie aux salicylés/AINS, grossesse à partir du 6e mois, enfant avec virose. EI principaux : douleurs gastriques, saignement digestif, bronchospasme, syndrome de Reye rare chez l’enfant. Surveillance : terrain digestif et hémorragique, âge, contexte infectieux."
+    },
+    {
+      nom: "Néfopam",
+      statut: "Classe autorisée",
+      classe: `Antalgique palier 1 — <a href="https://www.vidal.fr/maladies/douleurs-fievres/prise-charge-douleur/medicament-douleur-legere.html" target="_blank">selon VIDAL</a>`,
+      domaines: ["Toutes les mentions"],
+      usage: "Douleur aiguë, notamment douleur légère à modérée selon cette classification Vidal.",
+      remarques: "CI/prudence : glaucome à angle fermé, adénome de la prostate, antécédent de convulsions. EI principaux : nausées, vomissements, vertiges, sueurs, tachycardie, sécheresse buccale. Surveillance : tolérance neurologique, fréquence cardiaque, efficacité antalgique."
+    }
       {
         nom: "NaCl 0,9 %",
         statut: "Explicitement nommé",
@@ -679,51 +743,11 @@
 
 {
   nom: "Metformine",
-  statut: "Classe autorisée (hypoglycémiant de première ligne selon recommandations en vigueur) — sans diagnostic médical préalable",
+  statut: `Classe autorisée (hypoglycémiant de première ligne <a href="https://www.has-sante.fr/jcms/pprd_2974886/fr/diabete-de-type-2-strategie-medicamenteuse-du-controle-glycemique" target="_blank">selon recommandations en vigueur</a>) — sans diagnostic médical préalable`,
   classe: "Hypoglycémiant de première ligne — biguanide",
   domaines: ["PCS"],
-  usage: "Sans diagnostic médical préalable : traitement hypoglycémiant de première ligne chez un patient diabétique de type 2, conformément aux recommandations en vigueur.",
+  usage: "Sans diagnostic médical préalable : traitement hypoglycémiant de première ligne chez un patient diabétique de type 2",
   remarques: "CI/prudence : insuffisance rénale sévère, hypoxie tissulaire, insuffisance hépatique sévère, alcoolisation aiguë. EI principaux : diarrhée, nausées, douleurs abdominales ; acidose lactique rare mais grave. Surveillance : eGFR/créatinine, tolérance digestive, vitamine B12 si traitement prolongé. Renouvellement impossible sans concertation médicale."
-},
-{
-  nom: "Dapagliflozine",
-  statut: "Classe autorisée (hypoglycémiant de première ligne selon recommandations en vigueur) — sans diagnostic médical préalable",
-  classe: "Hypoglycémiant de première ligne — inhibiteur SGLT2",
-  domaines: ["PCS"],
-  usage: "Sans diagnostic médical préalable : traitement hypoglycémiant de première ligne chez un patient diabétique de type 2, conformément aux recommandations en vigueur et selon le profil cardio-rénal.",
-  remarques: "CI/prudence : insuffisance rénale selon eGFR/indication, déshydratation, antécédents d’acidocétose, infections uro-génitales récidivantes. EI principaux : mycoses génitales, infections urinaires, hypotension, déshydratation ; acidocétose euglycémique rare. Surveillance : eGFR, hydratation, infections uro-génitales, signes d’acidocétose. Renouvellement impossible sans concertation médicale."
-},
-{
-  nom: "Empagliflozine",
-  statut: "Classe autorisée (hypoglycémiant de première ligne selon recommandations en vigueur) — sans diagnostic médical préalable",
-  classe: "Hypoglycémiant de première ligne — inhibiteur SGLT2",
-  domaines: ["PCS"],
-  usage: "Sans diagnostic médical préalable : traitement hypoglycémiant de première ligne chez un patient diabétique de type 2, conformément aux recommandations en vigueur et selon le profil cardio-rénal.",
-  remarques: "CI/prudence : insuffisance rénale selon eGFR/indication, déshydratation, antécédents d’acidocétose, infections uro-génitales récidivantes. EI principaux : mycoses génitales, infections urinaires, hypotension, déshydratation ; acidocétose euglycémique rare. Surveillance : eGFR, hydratation, infections uro-génitales, signes d’acidocétose. Renouvellement impossible sans concertation médicale."
-},
-{
-  nom: "Liraglutide",
-  statut: "Classe autorisée (hypoglycémiant de première ligne selon recommandations en vigueur) — sans diagnostic médical préalable",
-  classe: "Hypoglycémiant de première ligne — agoniste du GLP-1",
-  domaines: ["PCS"],
-  usage: "Sans diagnostic médical préalable : traitement hypoglycémiant de première ligne chez un patient diabétique de type 2, conformément aux recommandations en vigueur et selon le profil pondéral/cardiovasculaire.",
-  remarques: "CI/prudence : antécédents de pancréatite, troubles digestifs importants, insuffisance rénale à surveiller selon contexte. EI principaux : nausées, vomissements, diarrhée, diminution de l’appétit. Surveillance : tolérance digestive, poids, signes de déshydratation, eGFR si fragilité. Renouvellement impossible sans concertation médicale."
-},
-{
-  nom: "Dulaglutide",
-  statut: "Classe autorisée (hypoglycémiant de première ligne selon recommandations en vigueur) — sans diagnostic médical préalable",
-  classe: "Hypoglycémiant de première ligne — agoniste du GLP-1",
-  domaines: ["PCS"],
-  usage: "Sans diagnostic médical préalable : traitement hypoglycémiant de première ligne chez un patient diabétique de type 2, conformément aux recommandations en vigueur et selon le profil pondéral/cardiovasculaire.",
-  remarques: "CI/prudence : antécédents de pancréatite, troubles digestifs importants. EI principaux : nausées, diarrhée, vomissements, perte d’appétit. Surveillance : tolérance digestive, poids, hydratation, signes de pancréatite. Renouvellement impossible sans concertation médicale."
-},
-{
-  nom: "Sémaglutide",
-  statut: "Classe autorisée (hypoglycémiant de première ligne selon recommandations en vigueur) — sans diagnostic médical préalable",
-  classe: "Hypoglycémiant de première ligne — agoniste du GLP-1",
-  domaines: ["PCS"],
-  usage: "Sans diagnostic médical préalable : traitement hypoglycémiant de première ligne chez un patient diabétique de type 2, conformément aux recommandations en vigueur et selon le profil pondéral/cardiovasculaire.",
-  remarques: "CI/prudence : antécédents de pancréatite, troubles digestifs importants ; prudence si rétinopathie diabétique évolutive. EI principaux : nausées, vomissements, diarrhée, diminution de l’appétit. Surveillance : tolérance digestive, poids, hydratation, vigilance ophtalmologique si rétinopathie. Renouvellement impossible sans concertation médicale."
 },
 {
   nom: "Atorvastatine",
@@ -1518,6 +1542,22 @@
   usage: "Avec diagnostic médical préalable implicite du contexte d'urgence : antalgique de palier 2.",
   remarques: "CI/prudence : insuffisance respiratoire, allaitement, métaboliseur ultrarapide CYP2D6, enfant selon contexte réglementaire. EI principaux : somnolence, constipation, nausées, dépression respiratoire. Surveillance : douleur, vigilance, fréquence respiratoire, transit."
 },
+    {
+  nom: "Paracétamol + poudre d'opium",
+  statut: "Classe autorisée",
+  classe: `Antalgique palier 2 — <a href="https://www.vidal.fr/maladies/douleurs-fievres/prise-charge-douleur/douleur-moderee-severe.html" target="_blank">selon VIDAL</a>`,
+  domaines: ["Urgences"],
+  usage: "Douleur aiguë modérée à intense, ou non soulagée par les antalgiques de palier 1.",
+  remarques: "Correspond notamment aux spécialités à base de paracétamol et poudre d’opium. CI/prudence : insuffisance respiratoire, insuffisance hépatique sévère, traumatisme crânien, association avec autres dépresseurs du SNC, risque de constipation et de dépendance. EI principaux : somnolence, nausées, vomissements, constipation, vertiges, dépression respiratoire. Surveillance : douleur, fréquence respiratoire, vigilance, cumul de paracétamol."
+},
+{
+  nom: "Paracétamol + poudre d'opium + caféine",
+  statut: "Classe autorisée",
+  classe: `Antalgique palier 2 — <a href="https://www.vidal.fr/maladies/douleurs-fievres/prise-charge-douleur/douleur-moderee-severe.html" target="_blank">selon VIDAL</a>`,
+  domaines: ["Urgences"],
+  usage: "Douleur modérée à intense lorsque les antalgiques de palier 1 sont insuffisants.",
+  remarques: "Correspond notamment aux spécialités associant paracétamol, poudre d’opium et caféine. CI/prudence : insuffisance respiratoire, insuffisance hépatique sévère, association avec autres dépresseurs du SNC, risque de tachycardie ou nervosité lié à la caféine. EI principaux : somnolence, nausées, vomissements, constipation, vertiges, tachycardie, nervosité. Surveillance : douleur, fréquence respiratoire, vigilance, cumul de paracétamol."
+},
 {
   nom: "Morphine",
   statut: "Classe autorisée",
@@ -1666,6 +1706,46 @@
   usage: "Collyre analgésique/anesthésique local dans le contexte d'urgence ophtalmologique.",
   remarques: "CI/prudence : ne pas injecter, ne pas avaler, prudence chez l’enfant selon spécialité. EI principaux : irritation locale, kératite épithéliale en mésusage répété, réactions allergiques rares. Surveillance : usage ponctuel, tolérance locale."
 },
+    {
+  nom: "Ciprofloxacine auriculaire",
+  statut: "Classe autorisée",
+  classe: "Antibiotique local auriculaire",
+  domaines: ["Urgences"],
+  usage: `Otite externe bactérienne — <a href="https://www.sforl.org" target="_blank">selon recommandations ORL</a>.`,
+  remarques: "Indiquée en première intention, notamment si tympan non visualisé ou perforé (non ototoxique). EI principaux : irritation locale, prurit. Surveillance : évolution douleur, écoulement, tolérance."
+},
+{
+  nom: "Ofloxacine auriculaire",
+  statut: "Classe autorisée",
+  classe: "Antibiotique local auriculaire",
+  domaines: ["Urgences"],
+  usage: `Otite externe bactérienne — <a href="https://www.sforl.org" target="_blank">selon recommandations ORL</a>.`,
+  remarques: "Alternative aux fluoroquinolones auriculaires. Utilisable si perforation tympanique. EI principaux : irritation locale. Surveillance : efficacité clinique."
+},
+{
+  nom: "Polymyxine B + néomycine + hydrocortisone",
+  statut: "Classe autorisée",
+  classe: "Antibiotique + corticoïde auriculaire",
+  domaines: ["Urgences"],
+  usage: `Otite externe bactérienne inflammatoire — <a href="https://www.sforl.org" target="_blank">selon recommandations ORL</a>.`,
+  remarques: "Association utile si inflammation importante. CI : perforation tympanique (risque ototoxique des aminosides). EI : irritation, allergie locale. Surveillance : douleur, audition."
+},
+{
+  nom: "Acide acétique",
+  statut: "Classe autorisée",
+  classe: "Antiseptique auriculaire",
+  domaines: ["Urgences"],
+  usage: `Otite externe peu sévère — <a href="https://www.sforl.org" target="_blank">selon recommandations ORL</a>.`,
+  remarques: "Acidification du conduit auditif. Utilisable formes débutantes. EI : irritation locale. Surveillance : évolution des symptômes."
+},
+{
+  nom: "Clotrimazole auriculaire",
+  statut: "Classe autorisée",
+  classe: "Antifongique auriculaire",
+  domaines: ["Urgences"],
+  usage: `Otite externe mycosique — <a href="https://www.sforl.org" target="_blank">selon recommandations ORL</a>.`,
+  remarques: "Indiqué en cas d’otite externe fongique. EI : irritation locale. Surveillance : disparition prurit et débris."
+}
 
 {
   nom: "Éconazole",
@@ -1719,36 +1799,35 @@
 {
   nom: "Ténofovir disoproxil fumarate",
   statut: "Classe autorisée",
-  classe: "Traitement préventif post-exposition VIH",
+  classe: 'Traitement préventif post-exposition VIH, selon <a href="https://www.has-sante.fr/jcms/p_3536535/fr/traitement-preventif-post-exposition-au-vih" target="_blank">recommandations HAS</a>',
   domaines: ["Urgences"],
-  usage: "Traitement préventif post-exposition au VIH, dans le cadre du schéma recommandé.",
+  usage: "Traitement préventif post-exposition au VIH, dans le cadre du schéma recommandé en 1re intention (association avec lamivudine ou emtricitabine et doravirine).",
   remarques: "CI/prudence : insuffisance rénale, interaction avec médicaments néphrotoxiques. EI principaux : nausées, troubles digestifs, céphalées, altération rénale possible. Surveillance : créatinine/eGFR, tolérance digestive."
 },
 {
   nom: "Lamivudine",
   statut: "Classe autorisée",
-  classe: "Traitement préventif post-exposition VIH",
+  classe: 'Traitement préventif post-exposition VIH, selon <a href="https://www.has-sante.fr/jcms/p_3536535/fr/traitement-preventif-post-exposition-au-vih" target="_blank">recommandations HAS</a>',
   domaines: ["Urgences"],
-  usage: "Traitement préventif post-exposition au VIH, dans le cadre du schéma recommandé.",
+  usage: "Traitement préventif post-exposition au VIH, dans le cadre du schéma recommandé en 1re intention (association avec ténofovir et doravirine).",
   remarques: "CI/prudence : adaptation rénale si besoin. EI principaux : nausées, céphalées, fatigue. Surveillance : tolérance clinique, fonction rénale selon association."
 },
 {
   nom: "Emtricitabine",
   statut: "Classe autorisée",
-  classe: "Traitement préventif post-exposition VIH",
+  classe: 'Traitement préventif post-exposition VIH, selon <a href="https://www.has-sante.fr/jcms/p_3536535/fr/traitement-preventif-post-exposition-au-vih" target="_blank">recommandations HAS</a>',
   domaines: ["Urgences"],
-  usage: "Traitement préventif post-exposition au VIH, dans le cadre du schéma recommandé.",
+  usage: "Traitement préventif post-exposition au VIH, dans le cadre du schéma recommandé en 1re intention (association avec ténofovir et doravirine).",
   remarques: "CI/prudence : insuffisance rénale selon contexte. EI principaux : nausées, diarrhée, céphalées. Surveillance : tolérance clinique, fonction rénale selon association."
 },
 {
   nom: "Doravirine",
   statut: "Classe autorisée",
-  classe: "Traitement préventif post-exposition VIH",
+  classe: 'Traitement préventif post-exposition VIH, selon <a href="https://www.has-sante.fr/jcms/p_3536535/fr/traitement-preventif-post-exposition-au-vih" target="_blank">recommandations HAS</a>',
   domaines: ["Urgences"],
-  usage: "Traitement préventif post-exposition au VIH, dans le cadre du schéma recommandé.",
+  usage: "Traitement préventif post-exposition au VIH, en association avec ténofovir et lamivudine ou emtricitabine selon le schéma recommandé en 1re intention.",
   remarques: "CI/prudence : interactions enzymatiques, insuffisance hépatique sévère à discuter. EI principaux : nausées, céphalées, vertiges, rêves anormaux possibles. Surveillance : tolérance clinique, interactions."
 },
-
 {
   nom: "Énoxaparine",
   statut: "Classe autorisée",
