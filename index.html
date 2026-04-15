@@ -73,10 +73,10 @@ Base de données publique des médicaments (ANSM)
 </a>
 </p>
 
-<input type="text" id="search" placeholder="Rechercher une DCI...">
+<input type="text" id="search" placeholder="Rechercher une DCI, une classe ou un domaine...">
 <select id="filter">
   <option value="">Tous les domaines</option>
-  <option value="Commun">Commun</option>
+  <option value="Commun">Commun / toutes mentions</option>
   <option value="Urgences">Urgences</option>
   <option value="PCS">PCS</option>
 </select>
@@ -141,9 +141,33 @@ const data = [
   }
 ];
 
+function normalize(text) {
+  return (text || "")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
+}
+
+function domainMatches(itemDomain, selectedFilter) {
+  if (selectedFilter === "") {
+    return true;
+  }
+
+  if (selectedFilter === "Commun") {
+    return itemDomain === "Commun";
+  }
+
+  return itemDomain === selectedFilter || itemDomain === "Commun";
+}
+
 function display(list) {
   const results = document.getElementById("results");
   results.innerHTML = "";
+
+  if (list.length === 0) {
+    results.innerHTML = `<p>Aucun résultat.</p>`;
+    return;
+  }
 
   list.forEach(item => {
     const div = document.createElement("div");
@@ -168,14 +192,18 @@ function display(list) {
 }
 
 function filterData() {
-  const search = document.getElementById("search").value.toLowerCase();
+  const search = normalize(document.getElementById("search").value);
   const filter = document.getElementById("filter").value;
 
   const filtered = data.filter(item => {
-    return (
-      item.name.toLowerCase().includes(search) &&
-      (filter === "" || item.domain === filter)
+    const searchableText = normalize(
+      `${item.name} ${item.classe} ${item.domain}`
     );
+
+    const matchesSearch = searchableText.includes(search);
+    const matchesDomain = domainMatches(item.domain, filter);
+
+    return matchesSearch && matchesDomain;
   });
 
   display(filtered);
