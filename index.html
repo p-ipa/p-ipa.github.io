@@ -1517,7 +1517,6 @@
   usage: "Avec diagnostic médical préalable : en cas de suspicion de déséquilibre du traitement chez un patient atteint de maladie de Parkinson.",
   remarques: "CI/prudence : interactions sérotoninergiques, insuffisance hépatique sévère. EI principaux : dyskinésies, somnolence, nausées, hallucinations. Surveillance : interactions, tolérance neuropsychiatrique, efficacité clinique."
 },
-
 {
   nom: "Chlorure de potassium",
   statut: "Avec diagnostic médical préalable",
@@ -1526,6 +1525,22 @@
   usage: "Avec diagnostic médical préalable : potassium si hypokaliémie.",
   remarques: "CI/prudence : hyperkaliémie, insuffisance rénale sévère, associations hyperkaliémiantes. EI principaux : irritation digestive, nausées, hyperkaliémie, troubles du rythme si surdosage. Surveillance : kaliémie, créatinine/DFG, ECG selon sévérité."
 },
+        {
+  nom: "Trinitrine",
+  statut: "Classe autorisée",
+  classe: "Vasodilatateur nitré (test à la trinitrine)",
+  domaines: ["Urgences"],
+  usage: "Test à la trinitrine dans le cadre du parcours médico-paramédical du domaine d’intervention Urgences.",
+  remarques: "CI/prudence : hypotension, prise d’inhibiteurs de la PDE5 (sildénafil, tadalafil), infarctus du ventricule droit. EI principaux : céphalées, hypotension, vertiges, bouffées vasomotrices. Surveillance : pression artérielle, fréquence cardiaque, efficacité clinique."
+},
+{
+  nom: "Oxygène (haut débit)",
+  statut: "Classe autorisée",
+  classe: "Oxygénothérapie",
+  domaines: ["Urgences"],
+  usage: "Oxygénothérapie haut débit dans le cadre du parcours médico-paramédical du domaine d’intervention Urgences.",
+  remarques: "Indiqué en cas d’hypoxémie aiguë. CI relative : insuffisance respiratoire chronique hypercapnique (précautions). EI principaux : sécheresse des muqueuses, inconfort, risque de rétention de CO₂ chez certains patients. Surveillance : SpO₂, fréquence respiratoire, signes de lutte, gaz du sang si nécessaire."
+}
       {
   nom: "Tramadol",
   statut: "Classe autorisée",
@@ -1706,45 +1721,21 @@
   usage: "Collyre analgésique/anesthésique local dans le contexte d'urgence ophtalmologique.",
   remarques: "CI/prudence : ne pas injecter, ne pas avaler, prudence chez l’enfant selon spécialité. EI principaux : irritation locale, kératite épithéliale en mésusage répété, réactions allergiques rares. Surveillance : usage ponctuel, tolérance locale."
 },
-    {
-  nom: "Ciprofloxacine auriculaire",
-  statut: "Classe autorisée",
-  classe: "Antibiotique local auriculaire",
-  domaines: ["Urgences"],
-  usage: `Otite externe bactérienne — <a href="https://www.sforl.org" target="_blank">selon recommandations ORL</a>.`,
-  remarques: "Indiquée en première intention, notamment si tympan non visualisé ou perforé (non ototoxique). EI principaux : irritation locale, prurit. Surveillance : évolution douleur, écoulement, tolérance."
-},
-{
-  nom: "Ofloxacine auriculaire",
-  statut: "Classe autorisée",
-  classe: "Antibiotique local auriculaire",
-  domaines: ["Urgences"],
-  usage: `Otite externe bactérienne — <a href="https://www.sforl.org" target="_blank">selon recommandations ORL</a>.`,
-  remarques: "Alternative aux fluoroquinolones auriculaires. Utilisable si perforation tympanique. EI principaux : irritation locale. Surveillance : efficacité clinique."
-},
-{
+   {
   nom: "Polymyxine B + néomycine + hydrocortisone",
   statut: "Classe autorisée",
-  classe: "Antibiotique + corticoïde auriculaire",
+  classe: 'Antibiotique + corticoïde auriculaire — <a href="https://mediatheque.sforl.org/publications/utilisation-des-gouttes-et-poudres-a-usage-auriculaire-texte-court/" target="_blank">référentiel SFORL 2001</a>',
   domaines: ["Urgences"],
-  usage: `Otite externe bactérienne inflammatoire — <a href="https://www.sforl.org" target="_blank">selon recommandations ORL</a>.`,
-  remarques: "Association utile si inflammation importante. CI : perforation tympanique (risque ototoxique des aminosides). EI : irritation, allergie locale. Surveillance : douleur, audition."
+  usage: "Otite externe bactérienne non compliquée si tympan intact.",
+  remarques: "Le référentiel SFORL 2001 indique que, dans l’otite externe non nécrosante et non compliquée, les gouttes et poudres auriculaires associant aminosides et corticoïdes constituent le traitement de base. CI/prudence : perforation tympanique, tympan non visualisé. EI principaux : irritation locale, allergie locale. Surveillance : douleur, écoulement, audition, évolution clinique."
 },
 {
-  nom: "Acide acétique",
+  nom: "Oxytétracycline + polymyxine B + dexaméthasone + nystatine",
   statut: "Classe autorisée",
-  classe: "Antiseptique auriculaire",
+  classe: 'Association auriculaire antibiotique + corticoïde + antifongique — <a href="https://mediatheque.sforl.org/publications/utilisation-des-gouttes-et-poudres-a-usage-auriculaire-texte-court/" target="_blank">référentiel SFORL 2001</a>',
   domaines: ["Urgences"],
-  usage: `Otite externe peu sévère — <a href="https://www.sforl.org" target="_blank">selon recommandations ORL</a>.`,
-  remarques: "Acidification du conduit auditif. Utilisable formes débutantes. EI : irritation locale. Surveillance : évolution des symptômes."
-},
-{
-  nom: "Clotrimazole auriculaire",
-  statut: "Classe autorisée",
-  classe: "Antifongique auriculaire",
-  domaines: ["Urgences"],
-  usage: `Otite externe mycosique — <a href="https://www.sforl.org" target="_blank">selon recommandations ORL</a>.`,
-  remarques: "Indiqué en cas d’otite externe fongique. EI : irritation locale. Surveillance : disparition prurit et débris."
+  usage: "Otite externe mycosique après nettoyage du conduit auditif externe.",
+  remarques: "Le référentiel SFORL 2001 indique qu’après nettoyage du conduit et examen bactério-mycologique, cette association peut être prescrite dans l’otomycose, initialement pendant 15 jours, avec prolongation possible d’une semaine selon l’évolution clinique. EI principaux : irritation locale, prurit. Surveillance : disparition du prurit, des débris et de l’écoulement, réévaluation clinique."
 },
 {
   nom: "Éconazole",
