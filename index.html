@@ -28,24 +28,20 @@
     }
 
     .container {
-      max-width: 1100px;
+      max-width: 1280px;
       margin: 0 auto;
       padding: 24px;
     }
 
-    header {
-      margin-bottom: 24px;
-    }
-
     h1 {
       margin: 0 0 8px;
-      font-size: 2rem;
+      font-size: 2.2rem;
       color: #1e3a8a;
     }
 
     .subtitle {
+      margin: 0 0 20px;
       color: var(--muted);
-      margin: 0;
     }
 
     .notice {
@@ -54,7 +50,7 @@
       color: var(--warn);
       border-radius: 14px;
       padding: 14px 16px;
-      margin: 20px 0;
+      margin-bottom: 20px;
     }
 
     .panel {
@@ -65,14 +61,14 @@
       margin-bottom: 20px;
     }
 
-    .search-row {
+    .search-layout {
       display: grid;
-      grid-template-columns: 1fr 220px;
-      gap: 12px;
-      margin-bottom: 12px;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      align-items: start;
     }
 
-    input, select {
+    input[type="text"] {
       width: 100%;
       padding: 12px 14px;
       border: 1px solid var(--border);
@@ -81,68 +77,76 @@
       background: white;
     }
 
+    .filters-box {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      min-width: 320px;
+    }
+
+    .filters-box label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+
     .meta {
       color: var(--muted);
       font-size: 0.95rem;
+      margin-top: 12px;
     }
 
-    .cards {
-      display: grid;
-      gap: 14px;
-    }
-
-    .card {
+    .table-wrap {
+      overflow-x: auto;
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 14px;
-      padding: 18px;
     }
 
-    .topline {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      align-items: start;
-      flex-wrap: wrap;
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 1150px;
     }
 
-    .dci {
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin: 0;
+    thead {
+      background: #f9fafb;
+    }
+
+    th, td {
+      text-align: left;
+      vertical-align: top;
+      padding: 14px 12px;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.95rem;
+    }
+
+    th {
+      font-size: 0.92rem;
+      color: #111827;
     }
 
     .badge {
       display: inline-block;
-      padding: 6px 10px;
+      padding: 5px 9px;
       border-radius: 999px;
       background: var(--accent-soft);
       color: var(--accent);
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       font-weight: 700;
+      margin-right: 6px;
+      margin-bottom: 4px;
       white-space: nowrap;
-    }
-
-    .details {
-      margin-top: 10px;
-    }
-
-    .details p {
-      margin: 6px 0;
-    }
-
-    .details strong {
-      display: inline-block;
-      min-width: 170px;
     }
 
     .empty {
       text-align: center;
       color: var(--muted);
-      padding: 32px;
-      background: var(--card);
-      border: 1px dashed var(--border);
-      border-radius: 14px;
+      padding: 28px;
     }
 
     a {
@@ -154,160 +158,473 @@
       text-decoration: underline;
     }
 
-    @media (max-width: 820px) {
-      .search-row {
+    @media (max-width: 980px) {
+      .search-layout {
         grid-template-columns: 1fr;
       }
 
-      .details strong {
+      .filters-box {
         min-width: 0;
-        display: block;
-        margin-bottom: 2px;
       }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <header>
-      <h1>P-IPA</h1>
-      <p class="subtitle">
-        Prescription de l’infirmier(e) en pratique avancée — DCI selon l’annexe VI de l’arrêté du 25 avril 2025.<br><br>
-        🔎 Vérification officielle des spécialités et RCP :
-        <a href="https://base-donnees-publique.medicaments.gouv.fr/" target="_blank">
-          Base de données publique des médicaments (ANSM)
-        </a>
-      </p>
-    </header>
+    <h1>P-IPA</h1>
+
+    <p class="subtitle">
+      Prescription de l’infirmier(e) en pratique avancée — DCI selon l’annexe VI de l’arrêté du 25 avril 2025.<br><br>
+      🔎 Vérification officielle des spécialités et RCP :
+      <a href="https://base-donnees-publique.medicaments.gouv.fr/" target="_blank" rel="noopener noreferrer">
+        Base de données publique des médicaments (ANSM)
+      </a>
+    </p>
 
     <div class="notice">
-      Moteur de recherche par DCI, classe ou domaine IPA.
+      Recherche par DCI, indication/usage ou classe thérapeutique. Le filtre par mention IPA affiche aussi les médicaments de toutes les mentions quand PCS ou Urgences est coché.
     </div>
 
     <section class="panel">
-      <div class="search-row">
-        <input id="searchInput" type="text" placeholder="Rechercher une DCI, une classe ou un domaine..." />
-        <select id="domainFilter">
-          <option value="">Tous les domaines IPA</option>
-          <option value="Commun">Commun / toutes mentions</option>
-          <option value="PCS">PCS</option>
-          <option value="Urgences">Urgences</option>
-        </select>
+      <div class="search-layout">
+        <input
+          id="searchInput"
+          type="text"
+          placeholder="Rechercher : DCI, indication, classe thérapeutique..."
+        />
+
+        <div class="filters-box">
+          <label>
+            <input type="checkbox" id="mentionToutes" checked>
+            Toutes les mentions
+          </label>
+          <label>
+            <input type="checkbox" id="mentionPCS">
+            PCS
+          </label>
+          <label>
+            <input type="checkbox" id="mentionUrgences">
+            Urgences
+          </label>
+        </div>
       </div>
+
       <div class="meta" id="resultCount"></div>
     </section>
 
-    <section id="cards" class="cards"></section>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Type</th>
+            <th>Statut réglementaire</th>
+            <th>Classe</th>
+            <th>Domaine IPA</th>
+            <th>Indication / usage</th>
+            <th>Contre-indications, EI, surveillance</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
   </div>
 
   <script>
-    const medications = [
+    const entries = [
       {
-        dci: "Paracétamol",
+        nom: "Paracétamol",
+        type: "DCI",
+        statut: "Classe autorisée",
         classe: "Antalgique palier 1",
-        domaine: "Commun",
-        indication: "Douleur légère à modérée, fièvre",
-        remarque: "CI/prudence : insuffisance hépatique sévère, surdosage. Surveillance : dose maximale, cumul avec autres spécialités."
+        domaines: ["Toutes les mentions"],
+        usage: "Douleur légère à modérée, fièvre.",
+        remarques: "CI/prudence : insuffisance hépatique sévère, alcoolisation chronique, surdosage. EI principaux : hépatotoxicité surtout en cas de dépassement de dose. Surveillance : dose totale/jour, terrain hépatique, cumul avec autres spécialités contenant du paracétamol."
       },
       {
-        dci: "Ibuprofène",
+        nom: "Ibuprofène",
+        type: "DCI",
+        statut: "Classe autorisée",
         classe: "Antalgique palier 1",
-        domaine: "Commun",
-        indication: "Douleur, inflammation, fièvre",
-        remarque: "CI/prudence : ulcère, insuffisance rénale, grossesse ≥ 6 mois. Surveillance : durée courte, fonction rénale, risque digestif."
+        domaines: ["Toutes les mentions"],
+        usage: "Douleur, inflammation, fièvre.",
+        remarques: "CI/prudence : ulcère gastro-duodénal évolutif, insuffisance rénale, insuffisance cardiaque décompensée, grossesse à partir du 6e mois, déshydratation. EI principaux : douleurs gastriques, nausées, risque digestif, rénal et cardiovasculaire selon terrain. Surveillance : durée courte, terrain digestif/rénal, hydratation, co-prescriptions."
       },
       {
-        dci: "Oméprazole",
-        classe: "IPP",
-        domaine: "Commun",
-        indication: "RGO, ulcère gastrique",
-        remarque: "CI/prudence : hypersensibilité. Surveillance : traitement prolongé, réévaluation de l’indication."
+        nom: "NaCl 0,9 %",
+        type: "DCI",
+        statut: "Explicitement nommé",
+        classe: "Soluté intraveineux",
+        domaines: ["Toutes les mentions"],
+        usage: "Hydratation, remplissage, véhicule, apport sodé selon indication.",
+        remarques: "Prudence : surcharge hydrosodée, insuffisance cardiaque, hypernatrémie, œdèmes. Surveillance : état d'hydratation, natrémie si contexte, signes de surcharge."
       },
       {
-        dci: "Lopéramide",
+        nom: "Glucose 5 %",
+        type: "DCI",
+        statut: "Explicitement nommé",
+        classe: "Soluté intraveineux",
+        domaines: ["Toutes les mentions"],
+        usage: "Hydratation, apport glucidique, véhicule.",
+        remarques: "Prudence : hyperglycémie, hyponatrémie de dilution selon contexte. Surveillance : glycémie, ionogramme si perfusion prolongée, état clinique."
+      },
+      {
+        nom: "Glucose 30 %",
+        type: "DCI",
+        statut: "Explicitement nommé",
+        classe: "Soluté intraveineux",
+        domaines: ["Toutes les mentions"],
+        usage: "Apport glucidique concentré, notamment en situation d'hypoglycémie selon contexte.",
+        remarques: "Prudence : hyperglycémie, extravasation, irritation veineuse. Surveillance : glycémie, voie veineuse, signes locaux d'extravasation."
+      },
+      {
+        nom: "Lopéramide",
+        type: "DCI",
+        statut: "Explicitement nommé",
         classe: "Antidiarrhéique",
-        domaine: "Commun",
-        indication: "Diarrhée aiguë",
-        remarque: "CI/prudence : diarrhée infectieuse sévère. Surveillance : durée courte, signes de gravité."
+        domaines: ["Toutes les mentions"],
+        usage: "Diarrhée aiguë symptomatique non invasive.",
+        remarques: "CI/prudence : diarrhée fébrile, sang dans les selles, suspicion de colite infectieuse/inflammatoire, constipation importante. EI principaux : constipation, distension abdominale. Surveillance : signes de gravité, hydratation, évolution sous 48 h."
       },
       {
-        dci: "Amoxicilline",
+        nom: "Racecadotril",
+        type: "DCI",
+        statut: "Explicitement nommé",
+        classe: "Antidiarrhéique",
+        domaines: ["Toutes les mentions"],
+        usage: "Diarrhée aiguë symptomatique.",
+        remarques: "Prudence : ne remplace pas la réhydratation si nécessaire. EI principaux : céphalées, éruptions ou réactions cutanées possibles. Surveillance : hydratation, persistance des symptômes, signes de gravité."
+      },
+      {
+        nom: "Cétirizine",
+        type: "DCI",
+        statut: "Classe autorisée",
+        classe: "Antihistaminique H1 peu sédatif oral",
+        domaines: ["Toutes les mentions"],
+        usage: "Manifestations allergiques ; rhinite allergique, urticaire selon AMM.",
+        remarques: "Prudence : insuffisance rénale, somnolence possible. EI principaux : somnolence, céphalées, sécheresse buccale. Surveillance : sédation, adaptation en cas d'insuffisance rénale."
+      },
+      {
+        nom: "Lévocétirizine",
+        type: "DCI",
+        statut: "Classe autorisée",
+        classe: "Antihistaminique H1 peu sédatif oral",
+        domaines: ["Toutes les mentions"],
+        usage: "Manifestations allergiques ; rhinite allergique, urticaire selon AMM.",
+        remarques: "Prudence : insuffisance rénale, somnolence possible. EI principaux : somnolence, fatigue, céphalées. Surveillance : tolérance clinique, adaptation à la fonction rénale."
+      },
+      {
+        nom: "Loratadine",
+        type: "DCI",
+        statut: "Classe autorisée",
+        classe: "Antihistaminique H1 peu sédatif oral",
+        domaines: ["Toutes les mentions"],
+        usage: "Manifestations allergiques ; rhinite allergique, urticaire selon AMM.",
+        remarques: "Prudence : insuffisance hépatique. EI principaux : céphalées, fatigue, sécheresse buccale. Surveillance : efficacité clinique, tolérance."
+      },
+      {
+        nom: "Desloratadine",
+        type: "DCI",
+        statut: "Classe autorisée",
+        classe: "Antihistaminique H1 peu sédatif oral",
+        domaines: ["Toutes les mentions"],
+        usage: "Manifestations allergiques ; rhinite allergique, urticaire selon AMM.",
+        remarques: "EI principaux : céphalées, fatigue, sécheresse buccale. Surveillance : efficacité et tolérance."
+      },
+      {
+        nom: "Fexofénadine",
+        type: "DCI",
+        statut: "Classe autorisée",
+        classe: "Antihistaminique H1 peu sédatif oral",
+        domaines: ["Toutes les mentions"],
+        usage: "Manifestations allergiques ; rhinite allergique, urticaire selon AMM.",
+        remarques: "EI principaux : céphalées, nausées, vertiges possibles. Surveillance : efficacité clinique, tolérance."
+      },
+      {
+        nom: "Bilastine",
+        type: "DCI",
+        statut: "Classe autorisée",
+        classe: "Antihistaminique H1 peu sédatif oral",
+        domaines: ["Toutes les mentions"],
+        usage: "Manifestations allergiques selon AMM.",
+        remarques: "EI principaux : céphalées, somnolence possible. Surveillance : tolérance clinique."
+      },
+      {
+        nom: "Phloroglucinol",
+        type: "DCI",
+        statut: "Classe autorisée",
+        classe: "Antispasmodique digestif",
+        domaines: ["Toutes les mentions"],
+        usage: "Spasmes douloureux d'origine digestive.",
+        remarques: "EI principaux : rares réactions allergiques, hypotension possible selon forme. Surveillance : efficacité symptomatique, persistance ou atypie de la douleur abdominale."
+      },
+      {
+        nom: "Trimébutine",
+        type: "DCI",
+        statut: "Classe autorisée",
+        classe: "Antispasmodique digestif",
+        domaines: ["Toutes les mentions"],
+        usage: "Troubles fonctionnels intestinaux, spasmes douloureux d'origine digestive.",
+        remarques: "EI principaux : somnolence, éruptions cutanées, troubles digestifs possibles. Surveillance : efficacité, absence de signe d'alarme digestif."
+      },
+      {
+        nom: "Diosmectite",
+        type: "DCI",
+        statut: "Classe autorisée",
+        classe: "Pansement digestif",
+        domaines: ["Toutes les mentions"],
+        usage: "Diarrhée aiguë symptomatique et douleurs digestives selon AMM.",
+        remarques: "Prudence : constipation, interactions par diminution d'absorption d'autres médicaments. Surveillance : transit, hydratation, espacement des prises avec autres traitements."
+      },
+      {
+        nom: "Lidocaïne + prilocaïne",
+        type: "DCI",
+        statut: "Classe autorisée",
+        classe: "Anesthésique local gel/crème",
+        domaines: ["Toutes les mentions"],
+        usage: "Anesthésie locale cutanée avant geste douloureux ; ulcère de jambe avant soin selon AMM.",
+        remarques: "CI/prudence : allergie aux anesthésiques locaux amides, méthémoglobinémie congénitale, déficit en G6PD selon spécialité. EI principaux : réactions locales, pâleur/érythème, méthémoglobinémie rare. Surveillance : intégrité cutanée, surface et durée d'application, tolérance locale."
+      },
+      {
+        nom: "Chlorhexidine",
+        type: "DCI",
+        statut: "Classe autorisée",
+        classe: "Antiseptique local",
+        domaines: ["Toutes les mentions"],
+        usage: "Antisepsie des plaies superficielles peu étendues, peau saine selon présentation.",
+        remarques: "CI/prudence : œil, conduit auditif si tympan perforé, méninges. EI principaux : irritation, allergie, eczéma de contact. Surveillance : zone d'application, tolérance locale."
+      },
+      {
+        nom: "Povidone iodée",
+        type: "DCI",
+        statut: "Classe autorisée",
+        classe: "Antiseptique local",
+        domaines: ["Toutes les mentions"],
+        usage: "Antisepsie de la peau, des plaies et brûlures superficielles peu étendues selon présentation.",
+        remarques: "CI/prudence : allergie à l'iode/povidone, dysthyroïdie, usage répété ou étendu. EI principaux : irritation locale, surcharge iodée rare en usage prolongé/étendu. Surveillance : terrain thyroïdien, étendue et durée d'application."
+      },
+      {
+        nom: "Hexamidine",
+        type: "DCI",
+        statut: "Classe autorisée",
+        classe: "Antiseptique local",
+        domaines: ["Toutes les mentions"],
+        usage: "Traitement d'appoint des affections cutanées superficielles, antisepsie locale selon forme.",
+        remarques: "EI principaux : irritation locale, réactions cutanées. Surveillance : tolérance locale, durée courte."
+      },
+      {
+        nom: "Alginate de sodium + bicarbonate de sodium",
+        type: "DCI",
+        statut: "Classe autorisée",
+        classe: "Antiacide gastrique d'action locale",
+        domaines: ["Toutes les mentions"],
+        usage: "Reflux gastro-œsophagien, brûlures ou aigreurs d'estomac.",
+        remarques: "Prudence : apport sodé, insuffisance cardiaque ou rénale selon spécialité. EI principaux : ballonnements, nausées, constipation possibles. Surveillance : fréquence des symptômes, terrain cardio-rénal, nécessité d'avis médical si persistance."
+      },
+      {
+        nom: "Oméprazole",
+        type: "DCI",
+        statut: "Classe autorisée",
+        classe: "IPP",
+        domaines: ["Toutes les mentions"],
+        usage: "RGO, dyspepsie acide, protection gastrique selon indication retenue.",
+        remarques: "EI principaux : céphalées, diarrhée, douleurs abdominales. Surveillance : réévaluation de l'indication et de la durée, signes d'alarme digestifs."
+      },
+      {
+        nom: "Ésomprazole",
+        type: "DCI",
+        statut: "Classe autorisée",
+        classe: "IPP",
+        domaines: ["Toutes les mentions"],
+        usage: "RGO, dyspepsie acide, protection gastrique selon indication retenue.",
+        remarques: "EI principaux : céphalées, diarrhée, douleurs abdominales. Surveillance : pertinence et durée du traitement, signes d'alarme digestifs."
+      },
+      {
+        nom: "Pantoprazole",
+        type: "DCI",
+        statut: "Classe autorisée",
+        classe: "IPP",
+        domaines: ["Toutes les mentions"],
+        usage: "RGO, dyspepsie acide, protection gastrique selon indication retenue.",
+        remarques: "EI principaux : céphalées, diarrhée, douleurs abdominales. Surveillance : réévaluation régulière, signes d'alarme digestifs."
+      },
+      {
+        nom: "Lansoprazole",
+        type: "DCI",
+        statut: "Classe autorisée",
+        classe: "IPP",
+        domaines: ["Toutes les mentions"],
+        usage: "RGO, dyspepsie acide, protection gastrique selon indication retenue.",
+        remarques: "EI principaux : céphalées, diarrhée, douleurs abdominales. Surveillance : bénéfice clinique, durée d'exposition."
+      },
+      {
+        nom: "Rabéprazole",
+        type: "DCI",
+        statut: "Classe autorisée",
+        classe: "IPP",
+        domaines: ["Toutes les mentions"],
+        usage: "RGO, dyspepsie acide, protection gastrique selon indication retenue.",
+        remarques: "EI principaux : céphalées, diarrhée, douleurs abdominales. Surveillance : indication, durée, évolution clinique."
+      },
+      {
+        nom: "Psyllium",
+        type: "DCI",
+        statut: "Classe autorisée",
+        classe: "Laxatif de lest",
+        domaines: ["Toutes les mentions"],
+        usage: "Constipation.",
+        remarques: "CI/prudence : obstruction digestive, difficultés de déglutition. EI principaux : ballonnements. Surveillance : hydratation suffisante, transit, tolérance digestive."
+      },
+      {
+        nom: "Macrogol",
+        type: "DCI",
+        statut: "Classe autorisée",
+        classe: "Laxatif osmotique",
+        domaines: ["Toutes les mentions"],
+        usage: "Constipation.",
+        remarques: "EI principaux : diarrhée, douleurs abdominales, ballonnements. Surveillance : efficacité, tolérance digestive, hydratation."
+      },
+      {
+        nom: "Lactulose",
+        type: "DCI",
+        statut: "Classe autorisée",
+        classe: "Laxatif osmotique",
+        domaines: ["Toutes les mentions"],
+        usage: "Constipation.",
+        remarques: "EI principaux : ballonnements, flatulences, douleurs abdominales, diarrhée selon dose. Surveillance : effet clinique, tolérance digestive."
+      },
+      {
+        nom: "Lactitol",
+        type: "DCI",
+        statut: "Classe autorisée",
+        classe: "Laxatif osmotique",
+        domaines: ["Toutes les mentions"],
+        usage: "Constipation.",
+        remarques: "EI principaux : ballonnements, flatulences, douleurs abdominales. Surveillance : transit et tolérance."
+      },
+      {
+        nom: "Paraffine liquide",
+        type: "DCI",
+        statut: "Classe autorisée",
+        classe: "Laxatif lubrifiant",
+        domaines: ["Toutes les mentions"],
+        usage: "Constipation.",
+        remarques: "CI/prudence : troubles de la déglutition, sujet fragile à risque de fausse route. EI principaux : suintements anaux, pneumopathie lipoïde en cas d'inhalation. Surveillance : tolérance, mode de prise, durée courte."
+      },
+      {
+        nom: "Fosfomycine-trométamol",
+        type: "DCI",
+        statut: "Explicitement nommé",
         classe: "Antibiotique",
-        domaine: "Commun",
-        indication: "Angine streptocoque test +",
-        remarque: "CI/prudence : allergie à la pénicilline. Surveillance : réaction allergique, évolution clinique."
+        domaines: ["Toutes les mentions"],
+        usage: "Cystite chez la femme de 16 à 65 ans sans facteur de risque de complication, après identification par TROD et formation dédiée.",
+        remarques: "CI/prudence : allergie, tableau non compatible avec cystite simple, facteurs de complication. EI principaux : diarrhée, nausées, céphalées. Surveillance : amélioration rapide des symptômes, absence de fièvre/lombalgie, réévaluation si échec."
       },
       {
-        dci: "Naloxone",
+        nom: "Amoxicilline",
+        type: "DCI",
+        statut: "Explicitement nommé",
+        classe: "Antibiotique",
+        domaines: ["Toutes les mentions"],
+        usage: "Angine bactérienne à strepto-test positif chez le patient âgé de 10 ans ou plus, après cadre réglementaire et formation dédiée.",
+        remarques: "CI principale : allergie aux bêta-lactamines. EI principaux : diarrhée, rash, nausées. Surveillance : observance, évolution clinique, signes allergiques."
+      },
+      {
+        nom: "Naloxone",
+        type: "DCI",
+        statut: "Explicitement nommé",
         classe: "Antidote",
-        domaine: "Urgences",
-        indication: "Surdosage opioïdes",
-        remarque: "Surveillance : vigilance respiratoire, récidive de la dépression respiratoire."
+        domaines: ["Toutes les mentions", "Urgences"],
+        usage: "Prise en charge en urgence d'une suspicion de surdosage aux opioïdes.",
+        remarques: "Prudence : durée d'action plus courte que certains opioïdes. EI principal : syndrome de sevrage aigu chez une personne dépendante. Surveillance : conscience, ventilation, récidive de dépression respiratoire, appel au SAMU/SMUR selon contexte."
       }
     ];
 
-    const searchInput = document.getElementById('searchInput');
-    const domainFilter = document.getElementById('domainFilter');
-    const cards = document.getElementById('cards');
-    const resultCount = document.getElementById('resultCount');
+    const searchInput = document.getElementById("searchInput");
+    const mentionToutes = document.getElementById("mentionToutes");
+    const mentionPCS = document.getElementById("mentionPCS");
+    const mentionUrgences = document.getElementById("mentionUrgences");
+    const tableBody = document.getElementById("tableBody");
+    const resultCount = document.getElementById("resultCount");
 
     function normalize(text) {
-      return (text || '')
+      return (text || "")
         .toLowerCase()
-        .normalize('NFD')
-        .replace(/[\u0300-\u036f]/g, '');
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
     }
 
-    function domainMatches(itemDomain, selectedDomain) {
-      if (!selectedDomain) return true;
-      if (selectedDomain === "Commun") return itemDomain === "Commun";
-      return itemDomain === selectedDomain || itemDomain === "Commun";
+    function getSelectedMentions() {
+      const selected = [];
+      if (mentionToutes.checked) selected.push("Toutes les mentions");
+      if (mentionPCS.checked) selected.push("PCS");
+      if (mentionUrgences.checked) selected.push("Urgences");
+      return selected;
+    }
+
+    function domainMatches(itemDomains, selectedMentions) {
+      if (selectedMentions.length === 0) {
+        return true;
+      }
+
+      if (selectedMentions.includes("Toutes les mentions") && itemDomains.includes("Toutes les mentions")) {
+        return true;
+      }
+
+      if (selectedMentions.includes("PCS") && (itemDomains.includes("PCS") || itemDomains.includes("Toutes les mentions"))) {
+        return true;
+      }
+
+      if (selectedMentions.includes("Urgences") && (itemDomains.includes("Urgences") || itemDomains.includes("Toutes les mentions"))) {
+        return true;
+      }
+
+      return false;
     }
 
     function render() {
       const term = normalize(searchInput.value);
-      const selectedDomain = domainFilter.value;
+      const selectedMentions = getSelectedMentions();
 
-      const filtered = medications.filter(item => {
-        const haystack = normalize([
-          item.dci,
+      const filtered = entries.filter(item => {
+        const searchableText = normalize([
+          item.nom,
           item.classe,
-          item.domaine,
-          item.indication,
-          item.remarque
-        ].join(' '));
+          item.usage
+        ].join(" "));
 
-        const matchesSearch = !term || haystack.includes(term);
-        const matchesDomain = domainMatches(item.domaine, selectedDomain);
+        const matchesSearch = !term || searchableText.includes(term);
+        const matchesDomain = domainMatches(item.domaines, selectedMentions);
 
         return matchesSearch && matchesDomain;
       });
 
-      resultCount.textContent = `${filtered.length} résultat(s) sur ${medications.length}`;
+      resultCount.textContent = `${filtered.length} résultat(s) sur ${entries.length}`;
 
       if (!filtered.length) {
-        cards.innerHTML = `<div class="empty">Aucun résultat pour cette recherche.</div>`;
+        tableBody.innerHTML = `<tr><td colspan="7" class="empty">Aucun résultat.</td></tr>`;
         return;
       }
 
-      cards.innerHTML = filtered.map(item => `
-        <article class="card">
-          <div class="topline">
-            <h2 class="dci">${item.dci}</h2>
-            <span class="badge">${item.classe}</span>
-          </div>
-          <div class="details">
-            <p><strong>Domaine IPA :</strong> ${item.domaine}</p>
-            <p><strong>Indication :</strong> ${item.indication}</p>
-            <p><strong>Contre-indications / surveillance :</strong> ${item.remarque}</p>
-          </div>
-        </article>
-      `).join('');
+      tableBody.innerHTML = filtered.map(item => `
+        <tr>
+          <td><strong>${item.nom}</strong></td>
+          <td>${item.type}</td>
+          <td>${item.statut}</td>
+          <td>${item.classe}</td>
+          <td>${item.domaines.map(d => `<span class="badge">${d}</span>`).join("")}</td>
+          <td>${item.usage}</td>
+          <td>${item.remarques}</td>
+        </tr>
+      `).join("");
     }
 
+    searchInput.addEventListener("input", render);
+    mentionToutes.addEventListener("change", render);
+    mentionPCS.addEventListener("change", render);
+    mentionUrgences.addEventListener("change", render);
+
     render();
-    searchInput.addEventListener('input', render);
-    domainFilter.addEventListener('change', render);
   </script>
 </body>
 </html>
