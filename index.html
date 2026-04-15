@@ -166,6 +166,11 @@
       .filters-box {
         min-width: 0;
       }
+      .search-help {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 6px;
+}
     }
   </style>
 </head>
@@ -173,13 +178,16 @@
   <div class="container">
     <h1>P-IPA</h1>
 
-    <p class="subtitle">
-      Prescription de l’infirmier(e) en pratique avancée — DCI selon l’annexe VI de l’arrêté du 25 avril 2025.<br><br>
-      🔎 Pour une vérification officielle des spécialités et RCP, rendez-vous sur :
-      <a href="https://base-donnees-publique.medicaments.gouv.fr/" target="_blank" rel="noopener noreferrer">
-        Base de données publique des médicaments (ANSM)
-      </a>
-    </p>
+<div class="notice">
+  Pimo-prescription de l’infirmier(e) en pratique avancée selon l’
+  <a href="https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000051533034" target="_blank" rel="noopener noreferrer">
+    annexe VI de l’Arrêté du 25 avril 2025 modifiant l'arrêté du 18 juillet 2018 fixant les listes permettant l'exercice infirmier en pratique avancée en application de l'article R. 4301-3 du code de la santé publique
+  </a>.<br><br>
+  🔎 Pour une vérification officielle des spécialités et RCP :
+  <a href="https://base-donnees-publique.medicaments.gouv.fr/" target="_blank" rel="noopener noreferrer">
+    Base de données publique des médicaments
+  </a>
+</div>
 
 
     <section class="panel">
@@ -263,7 +271,6 @@
       },
       {
         nom: "Glucose 5 %",
-        type: "DCI",
         statut: "Explicitement nommé",
         classe: "Soluté intraveineux",
         domaines: ["Toutes les mentions"],
@@ -272,7 +279,6 @@
       },
       {
         nom: "Glucose 30 %",
-        type: "DCI",
         statut: "Explicitement nommé",
         classe: "Soluté intraveineux",
         domaines: ["Toutes les mentions"],
@@ -281,7 +287,6 @@
       },
       {
         nom: "Lopéramide",
-        type: "DCI",
         statut: "Explicitement nommé",
         classe: "Antidiarrhéique",
         domaines: ["Toutes les mentions"],
@@ -290,7 +295,6 @@
       },
       {
         nom: "Racecadotril",
-        type: "DCI",
         statut: "Explicitement nommé",
         classe: "Antidiarrhéique",
         domaines: ["Toutes les mentions"],
@@ -299,7 +303,6 @@
       },
       {
         nom: "Cétirizine",
-        type: "DCI",
         statut: "Classe autorisée",
         classe: "Antihistaminique H1 peu sédatif oral",
         domaines: ["Toutes les mentions"],
@@ -308,7 +311,6 @@
       },
       {
         nom: "Lévocétirizine",
-        type: "DCI",
         statut: "Classe autorisée",
         classe: "Antihistaminique H1 peu sédatif oral",
         domaines: ["Toutes les mentions"],
@@ -317,7 +319,6 @@
       },
       {
         nom: "Loratadine",
-        type: "DCI",
         statut: "Classe autorisée",
         classe: "Antihistaminique H1 peu sédatif oral",
         domaines: ["Toutes les mentions"],
@@ -326,7 +327,6 @@
       },
       {
         nom: "Desloratadine",
-        type: "DCI",
         statut: "Classe autorisée",
         classe: "Antihistaminique H1 peu sédatif oral",
         domaines: ["Toutes les mentions"],
@@ -335,7 +335,6 @@
       },
       {
         nom: "Fexofénadine",
-        type: "DCI",
         statut: "Classe autorisée",
         classe: "Antihistaminique H1 peu sédatif oral",
         domaines: ["Toutes les mentions"],
@@ -344,7 +343,6 @@
       },
       {
         nom: "Bilastine",
-        type: "DCI",
         statut: "Classe autorisée",
         classe: "Antihistaminique H1 peu sédatif oral",
         domaines: ["Toutes les mentions"],
@@ -353,7 +351,6 @@
       },
       {
         nom: "Phloroglucinol",
-        type: "DCI",
         statut: "Classe autorisée",
         classe: "Antispasmodique digestif",
         domaines: ["Toutes les mentions"],
@@ -362,7 +359,6 @@
       },
       {
         nom: "Trimébutine",
-        type: "DCI",
         statut: "Classe autorisée",
         classe: "Antispasmodique digestif",
         domaines: ["Toutes les mentions"],
@@ -371,7 +367,6 @@
       },
       {
         nom: "Diosmectite",
-        type: "DCI",
         statut: "Classe autorisée",
         classe: "Pansement digestif",
         domaines: ["Toutes les mentions"],
@@ -380,7 +375,6 @@
       },
       {
         nom: "Lidocaïne + prilocaïne",
-        type: "DCI",
         statut: "Classe autorisée",
         classe: "Anesthésique local gel/crème",
         domaines: ["Toutes les mentions"],
@@ -389,7 +383,6 @@
       },
       {
         nom: "Chlorhexidine",
-        type: "DCI",
         statut: "Classe autorisée",
         classe: "Antiseptique local",
         domaines: ["Toutes les mentions"],
@@ -398,7 +391,6 @@
       },
       {
         nom: "Povidone iodée",
-        type: "DCI",
         statut: "Classe autorisée",
         classe: "Antiseptique local",
         domaines: ["Toutes les mentions"],
@@ -407,7 +399,6 @@
       },
       {
         nom: "Hexamidine",
-        type: "DCI",
         statut: "Classe autorisée",
         classe: "Antiseptique local",
         domaines: ["Toutes les mentions"],
@@ -416,7 +407,6 @@
       },
       {
         nom: "Alginate de sodium + bicarbonate de sodium",
-        type: "DCI",
         statut: "Classe autorisée",
         classe: "Antiacide gastrique d'action locale",
         domaines: ["Toutes les mentions"],
@@ -425,7 +415,6 @@
       },
       {
         nom: "Oméprazole",
-        type: "DCI",
         statut: "Classe autorisée",
         classe: "IPP",
         domaines: ["Toutes les mentions"],
@@ -434,7 +423,6 @@
       },
       {
         nom: "Ésomprazole",
-        type: "DCI",
         statut: "Classe autorisée",
         classe: "IPP",
         domaines: ["Toutes les mentions"],
@@ -443,7 +431,6 @@
       },
       {
         nom: "Pantoprazole",
-        type: "DCI",
         statut: "Classe autorisée",
         classe: "IPP",
         domaines: ["Toutes les mentions"],
@@ -452,7 +439,6 @@
       },
       {
         nom: "Lansoprazole",
-        type: "DCI",
         statut: "Classe autorisée",
         classe: "IPP",
         domaines: ["Toutes les mentions"],
@@ -461,7 +447,6 @@
       },
       {
         nom: "Rabéprazole",
-        type: "DCI",
         statut: "Classe autorisée",
         classe: "IPP",
         domaines: ["Toutes les mentions"],
@@ -470,7 +455,6 @@
       },
       {
         nom: "Psyllium",
-        type: "DCI",
         statut: "Classe autorisée",
         classe: "Laxatif de lest",
         domaines: ["Toutes les mentions"],
@@ -479,7 +463,6 @@
       },
       {
         nom: "Macrogol",
-        type: "DCI",
         statut: "Classe autorisée",
         classe: "Laxatif osmotique",
         domaines: ["Toutes les mentions"],
@@ -488,7 +471,6 @@
       },
       {
         nom: "Lactulose",
-        type: "DCI",
         statut: "Classe autorisée",
         classe: "Laxatif osmotique",
         domaines: ["Toutes les mentions"],
@@ -497,7 +479,6 @@
       },
       {
         nom: "Lactitol",
-        type: "DCI",
         statut: "Classe autorisée",
         classe: "Laxatif osmotique",
         domaines: ["Toutes les mentions"],
@@ -506,7 +487,6 @@
       },
       {
         nom: "Paraffine liquide",
-        type: "DCI",
         statut: "Classe autorisée",
         classe: "Laxatif lubrifiant",
         domaines: ["Toutes les mentions"],
@@ -515,7 +495,6 @@
       },
       {
         nom: "Fosfomycine-trométamol",
-        type: "DCI",
         statut: "Explicitement nommé",
         classe: "Antibiotique",
         domaines: ["Toutes les mentions"],
@@ -524,7 +503,6 @@
       },
       {
         nom: "Amoxicilline",
-        type: "DCI",
         statut: "Explicitement nommé",
         classe: "Antibiotique",
         domaines: ["Toutes les mentions"],
@@ -533,7 +511,6 @@
       },
       {
         nom: "Naloxone",
-        type: "DCI",
         statut: "Explicitement nommé",
         classe: "Antidote",
         domaines: ["Toutes les mentions", "Urgences"],
@@ -542,182 +519,162 @@
       },
       {
   nom: "Ramipril",
-  type: "DCI",
   statut: "Classe autorisée (IEC) — sans diagnostic médical préalable",
   classe: "Antihypertenseur de première ligne — IEC",
   domaines: ["PCS"],
-  usage: "Sans diagnostic médical préalable : hypertension artérielle de grade 1 sans retentissement, en monothérapie, de préférence en monoprise.",
+  usage: "Sans diagnostic médical préalable : HTA de grade 1 sans retentissement, en monothérapie, de préférence en monoprise.",
   remarques: "CI/prudence : grossesse, antécédent d’angiœdème, sténose bilatérale des artères rénales, hyperkaliémie, insuffisance rénale à surveiller. EI principaux : toux, hypotension, hyperkaliémie, insuffisance rénale fonctionnelle, angiœdème. Surveillance : PA, créatinine/DFG, kaliémie. Renouvellement impossible sans concertation médicale."
 },
 {
   nom: "Périndopril",
-  type: "DCI",
   statut: "Classe autorisée (IEC) — sans diagnostic médical préalable",
   classe: "Antihypertenseur de première ligne — IEC",
   domaines: ["PCS"],
-  usage: "Sans diagnostic médical préalable : hypertension artérielle de grade 1 sans retentissement, en monothérapie, de préférence en monoprise.",
+  usage: "Sans diagnostic médical préalable : HTA de grade 1 sans retentissement, en monothérapie, de préférence en monoprise.",
   remarques: "CI/prudence : grossesse, antécédent d’angiœdème, hyperkaliémie, sténose des artères rénales. EI principaux : toux, hypotension, hyperkaliémie, altération de la fonction rénale, angiœdème. Surveillance : PA, créatinine/DFG, kaliémie. Renouvellement impossible sans concertation médicale."
 },
 {
   nom: "Énalapril",
-  type: "DCI",
   statut: "Classe autorisée (IEC) — sans diagnostic médical préalable",
   classe: "Antihypertenseur de première ligne — IEC",
   domaines: ["PCS"],
-  usage: "Sans diagnostic médical préalable : hypertension artérielle de grade 1 sans retentissement, en monothérapie.",
+  usage: "Sans diagnostic médical préalable : HTA de grade 1 sans retentissement, en monothérapie.",
   remarques: "CI/prudence : grossesse, antécédent d’angiœdème, hyperkaliémie, sténose bilatérale des artères rénales. EI principaux : toux, hypotension, hyperkaliémie, insuffisance rénale fonctionnelle, angiœdème. Surveillance : PA, créatinine/DFG, kaliémie. Renouvellement impossible sans concertation médicale."
 },
 {
   nom: "Lisinopril",
-  type: "DCI",
   statut: "Classe autorisée (IEC) — sans diagnostic médical préalable",
   classe: "Antihypertenseur de première ligne — IEC",
   domaines: ["PCS"],
-  usage: "Sans diagnostic médical préalable : hypertension artérielle de grade 1 sans retentissement, en monothérapie.",
+  usage: "Sans diagnostic médical préalable : HTA de grade 1 sans retentissement, en monothérapie.",
   remarques: "CI/prudence : grossesse, antécédent d’angiœdème, hyperkaliémie, sténose des artères rénales. EI principaux : toux, hypotension, hyperkaliémie, altération rénale, angiœdème. Surveillance : PA, créatinine/DFG, kaliémie. Renouvellement impossible sans concertation médicale."
 },
 {
   nom: "Captopril",
-  type: "DCI",
   statut: "Classe autorisée (IEC) — sans diagnostic médical préalable",
   classe: "Antihypertenseur de première ligne — IEC",
   domaines: ["PCS"],
-  usage: "Sans diagnostic médical préalable : hypertension artérielle de grade 1 sans retentissement, en monothérapie.",
+  usage: "Sans diagnostic médical préalable : HTA de grade 1 sans retentissement, en monothérapie.",
   remarques: "CI/prudence : grossesse, antécédent d’angiœdème, hyperkaliémie, sténose des artères rénales. EI principaux : toux, hypotension, hyperkaliémie, insuffisance rénale fonctionnelle, angiœdème. Surveillance : PA, créatinine/DFG, kaliémie. Renouvellement impossible sans concertation médicale."
 },
 {
   nom: "Fosinopril",
-  type: "DCI",
   statut: "Classe autorisée (IEC) — sans diagnostic médical préalable",
   classe: "Antihypertenseur de première ligne — IEC",
   domaines: ["PCS"],
-  usage: "Sans diagnostic médical préalable : hypertension artérielle de grade 1 sans retentissement, en monothérapie.",
+  usage: "Sans diagnostic médical préalable : HTA de grade 1 sans retentissement, en monothérapie.",
   remarques: "CI/prudence : grossesse, antécédent d’angiœdème, hyperkaliémie, sténose des artères rénales. EI principaux : toux, hypotension, hyperkaliémie, altération de la fonction rénale, angiœdème. Surveillance : PA, créatinine/DFG, kaliémie. Renouvellement impossible sans concertation médicale."
 },
 {
   nom: "Trandolapril",
-  type: "DCI",
   statut: "Classe autorisée (IEC) — sans diagnostic médical préalable",
   classe: "Antihypertenseur de première ligne — IEC",
   domaines: ["PCS"],
-  usage: "Sans diagnostic médical préalable : hypertension artérielle de grade 1 sans retentissement, en monothérapie.",
+  usage: "Sans diagnostic médical préalable : HTA de grade 1 sans retentissement, en monothérapie.",
   remarques: "CI/prudence : grossesse, antécédent d’angiœdème, hyperkaliémie, sténose des artères rénales. EI principaux : toux, hypotension, hyperkaliémie, altération rénale, angiœdème. Surveillance : PA, créatinine/DFG, kaliémie. Renouvellement impossible sans concertation médicale."
 },
 
 {
   nom: "Candesartan",
-  type: "DCI",
   statut: "Classe autorisée (ARA2) — sans diagnostic médical préalable",
   classe: "Antihypertenseur de première ligne — ARA2",
   domaines: ["PCS"],
-  usage: "Sans diagnostic médical préalable : hypertension artérielle de grade 1 sans retentissement, en monothérapie, de préférence en monoprise.",
+  usage: "Sans diagnostic médical préalable : HTA de grade 1 sans retentissement, en monothérapie, de préférence en monoprise.",
   remarques: "CI/prudence : grossesse, hyperkaliémie, sténose bilatérale des artères rénales, insuffisance rénale à surveiller. EI principaux : hypotension, hyperkaliémie, altération de la fonction rénale, vertiges. Surveillance : PA, créatinine/DFG, kaliémie. Renouvellement impossible sans concertation médicale."
 },
 {
   nom: "Irbésartan",
-  type: "DCI",
   statut: "Classe autorisée (ARA2) — sans diagnostic médical préalable",
   classe: "Antihypertenseur de première ligne — ARA2",
   domaines: ["PCS"],
-  usage: "Sans diagnostic médical préalable : hypertension artérielle de grade 1 sans retentissement, en monothérapie, de préférence en monoprise.",
+  usage: "Sans diagnostic médical préalable : HTA de grade 1 sans retentissement, en monothérapie, de préférence en monoprise.",
   remarques: "CI/prudence : grossesse, hyperkaliémie, sténose des artères rénales. EI principaux : hypotension, hyperkaliémie, insuffisance rénale fonctionnelle, vertiges. Surveillance : PA, créatinine/DFG, kaliémie. Renouvellement impossible sans concertation médicale."
 },
 {
   nom: "Losartan",
-  type: "DCI",
   statut: "Classe autorisée (ARA2) — sans diagnostic médical préalable",
   classe: "Antihypertenseur de première ligne — ARA2",
   domaines: ["PCS"],
-  usage: "Sans diagnostic médical préalable : hypertension artérielle de grade 1 sans retentissement, en monothérapie.",
+  usage: "Sans diagnostic médical préalable : HTA de grade 1 sans retentissement, en monothérapie.",
   remarques: "CI/prudence : grossesse, hyperkaliémie, sténose des artères rénales. EI principaux : hypotension, hyperkaliémie, altération de la fonction rénale. Surveillance : PA, créatinine/DFG, kaliémie. Renouvellement impossible sans concertation médicale."
 },
 {
   nom: "Olmésartan",
-  type: "DCI",
   statut: "Classe autorisée (ARA2) — sans diagnostic médical préalable",
   classe: "Antihypertenseur de première ligne — ARA2",
   domaines: ["PCS"],
-  usage: "Sans diagnostic médical préalable : hypertension artérielle de grade 1 sans retentissement, en monothérapie, de préférence en monoprise.",
+  usage: "Sans diagnostic médical préalable : HTA de grade 1 sans retentissement, en monothérapie, de préférence en monoprise.",
   remarques: "CI/prudence : grossesse, hyperkaliémie, sténose des artères rénales. EI principaux : hypotension, hyperkaliémie, altération rénale, vertiges. Surveillance : PA, créatinine/DFG, kaliémie. Renouvellement impossible sans concertation médicale."
 },
 {
   nom: "Telmisartan",
-  type: "DCI",
   statut: "Classe autorisée (ARA2) — sans diagnostic médical préalable",
   classe: "Antihypertenseur de première ligne — ARA2",
   domaines: ["PCS"],
-  usage: "Sans diagnostic médical préalable : hypertension artérielle de grade 1 sans retentissement, en monothérapie, de préférence en monoprise.",
+  usage: "Sans diagnostic médical préalable : HTA de grade 1 sans retentissement, en monothérapie, de préférence en monoprise.",
   remarques: "CI/prudence : grossesse, hyperkaliémie, sténose des artères rénales. EI principaux : hypotension, hyperkaliémie, altération de la fonction rénale. Surveillance : PA, créatinine/DFG, kaliémie. Renouvellement impossible sans concertation médicale."
 },
 {
   nom: "Valsartan",
-  type: "DCI",
   statut: "Classe autorisée (ARA2) — sans diagnostic médical préalable",
   classe: "Antihypertenseur de première ligne — ARA2",
   domaines: ["PCS"],
-  usage: "Sans diagnostic médical préalable : hypertension artérielle de grade 1 sans retentissement, en monothérapie.",
+  usage: "Sans diagnostic médical préalable : HTA de grade 1 sans retentissement, en monothérapie.",
   remarques: "CI/prudence : grossesse, hyperkaliémie, sténose des artères rénales. EI principaux : hypotension, hyperkaliémie, insuffisance rénale fonctionnelle, vertiges. Surveillance : PA, créatinine/DFG, kaliémie. Renouvellement impossible sans concertation médicale."
 },
 
 {
   nom: "Amlodipine",
-  type: "DCI",
   statut: "Classe autorisée (inhibiteur calcique) — sans diagnostic médical préalable",
   classe: "Antihypertenseur de première ligne — inhibiteur calcique",
   domaines: ["PCS"],
-  usage: "Sans diagnostic médical préalable : hypertension artérielle de grade 1 sans retentissement, en monothérapie, de préférence en monoprise.",
+  usage: "Sans diagnostic médical préalable : HTA de grade 1 sans retentissement, en monothérapie, de préférence en monoprise.",
   remarques: "CI/prudence : hypotension sévère, état de choc, sténose aortique serrée à discuter selon contexte. EI principaux : œdèmes des membres inférieurs, céphalées, bouffées vasomotrices, palpitations. Surveillance : PA, œdèmes, tolérance clinique. Renouvellement impossible sans concertation médicale."
 },
 {
   nom: "Lercanidipine",
-  type: "DCI",
   statut: "Classe autorisée (inhibiteur calcique) — sans diagnostic médical préalable",
   classe: "Antihypertenseur de première ligne — inhibiteur calcique",
   domaines: ["PCS"],
-  usage: "Sans diagnostic médical préalable : hypertension artérielle de grade 1 sans retentissement, en monothérapie, de préférence en monoprise.",
+  usage: "Sans diagnostic médical préalable : HTA de grade 1 sans retentissement, en monothérapie, de préférence en monoprise.",
   remarques: "CI/prudence : hypotension sévère, insuffisance hépatique sévère, interaction avec inhibiteurs puissants du CYP3A4. EI principaux : céphalées, œdèmes, palpitations, rougeur faciale. Surveillance : PA, œdèmes, interactions médicamenteuses. Renouvellement impossible sans concertation médicale."
 },
 {
   nom: "Félodipine",
-  type: "DCI",
   statut: "Classe autorisée (inhibiteur calcique) — sans diagnostic médical préalable",
   classe: "Antihypertenseur de première ligne — inhibiteur calcique",
   domaines: ["PCS"],
-  usage: "Sans diagnostic médical préalable : hypertension artérielle de grade 1 sans retentissement, en monothérapie.",
+  usage: "Sans diagnostic médical préalable : HTA de grade 1 sans retentissement, en monothérapie.",
   remarques: "CI/prudence : hypotension sévère, interactions CYP3A4. EI principaux : œdèmes périphériques, céphalées, rougeurs, palpitations. Surveillance : PA, œdèmes, tolérance clinique. Renouvellement impossible sans concertation médicale."
 },
 {
   nom: "Manidipine",
-  type: "DCI",
   statut: "Classe autorisée (inhibiteur calcique) — sans diagnostic médical préalable",
   classe: "Antihypertenseur de première ligne — inhibiteur calcique",
   domaines: ["PCS"],
-  usage: "Sans diagnostic médical préalable : hypertension artérielle de grade 1 sans retentissement, en monothérapie.",
+  usage: "Sans diagnostic médical préalable : HTA de grade 1 sans retentissement, en monothérapie.",
   remarques: "CI/prudence : hypotension sévère, insuffisance hépatique sévère, interactions CYP3A4. EI principaux : œdèmes, céphalées, palpitations, rougeurs. Surveillance : PA, œdèmes, tolérance. Renouvellement impossible sans concertation médicale."
 },
 
 {
   nom: "Hydrochlorothiazide",
-  type: "DCI",
   statut: "Classe autorisée (diurétique thiazidique) — sans diagnostic médical préalable",
   classe: "Antihypertenseur de première ligne — diurétique thiazidique",
   domaines: ["PCS"],
-  usage: "Sans diagnostic médical préalable : hypertension artérielle de grade 1 sans retentissement, en monothérapie, de préférence en monoprise.",
+  usage: "Sans diagnostic médical préalable : HTA de grade 1 sans retentissement, en monothérapie, de préférence en monoprise.",
   remarques: "CI/prudence : hyponatrémie, hypokaliémie, déshydratation, insuffisance rénale sévère, goutte. EI principaux : hypokaliémie, hyponatrémie, hyperuricémie, photosensibilité, déshydratation. Surveillance : PA, ionogramme, créatinine/DFG, uricémie selon contexte. Renouvellement impossible sans concertation médicale."
 },
 {
   nom: "Indapamide",
-  type: "DCI",
   statut: "Classe autorisée (diurétique thiazidique) — sans diagnostic médical préalable",
   classe: "Antihypertenseur de première ligne — diurétique thiazidique",
   domaines: ["PCS"],
-  usage: "Sans diagnostic médical préalable : hypertension artérielle de grade 1 sans retentissement, en monothérapie, de préférence en monoprise.",
+  usage: "Sans diagnostic médical préalable : HTA de grade 1 sans retentissement, en monothérapie, de préférence en monoprise.",
   remarques: "CI/prudence : hyponatrémie, hypokaliémie, insuffisance rénale sévère, insuffisance hépatique sévère, goutte. EI principaux : hypokaliémie, hyponatrémie, déshydratation, vertiges, photosensibilité. Surveillance : PA, ionogramme, créatinine/DFG. Renouvellement impossible sans concertation médicale."
 },
 
 {
   nom: "Metformine",
-  type: "DCI",
   statut: "Classe autorisée (hypoglycémiant de première ligne selon recommandations en vigueur) — sans diagnostic médical préalable",
   classe: "Hypoglycémiant de première ligne — biguanide",
   domaines: ["PCS"],
@@ -726,7 +683,6 @@
 },
 {
   nom: "Dapagliflozine",
-  type: "DCI",
   statut: "Classe autorisée (hypoglycémiant de première ligne selon recommandations en vigueur) — sans diagnostic médical préalable",
   classe: "Hypoglycémiant de première ligne — inhibiteur SGLT2",
   domaines: ["PCS"],
@@ -735,7 +691,6 @@
 },
 {
   nom: "Empagliflozine",
-  type: "DCI",
   statut: "Classe autorisée (hypoglycémiant de première ligne selon recommandations en vigueur) — sans diagnostic médical préalable",
   classe: "Hypoglycémiant de première ligne — inhibiteur SGLT2",
   domaines: ["PCS"],
@@ -744,7 +699,6 @@
 },
 {
   nom: "Liraglutide",
-  type: "DCI",
   statut: "Classe autorisée (hypoglycémiant de première ligne selon recommandations en vigueur) — sans diagnostic médical préalable",
   classe: "Hypoglycémiant de première ligne — agoniste du GLP-1",
   domaines: ["PCS"],
@@ -753,7 +707,6 @@
 },
 {
   nom: "Dulaglutide",
-  type: "DCI",
   statut: "Classe autorisée (hypoglycémiant de première ligne selon recommandations en vigueur) — sans diagnostic médical préalable",
   classe: "Hypoglycémiant de première ligne — agoniste du GLP-1",
   domaines: ["PCS"],
@@ -762,7 +715,6 @@
 },
 {
   nom: "Sémaglutide",
-  type: "DCI",
   statut: "Classe autorisée (hypoglycémiant de première ligne selon recommandations en vigueur) — sans diagnostic médical préalable",
   classe: "Hypoglycémiant de première ligne — agoniste du GLP-1",
   domaines: ["PCS"],
