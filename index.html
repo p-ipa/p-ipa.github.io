@@ -328,7 +328,7 @@
       domaines: ["Toutes les mentions"],
       usage: "Douleur aiguë, notamment douleur légère à modérée selon cette classification Vidal.",
       remarques: "CI/prudence : glaucome à angle fermé, adénome de la prostate, antécédent de convulsions. EI principaux : nausées, vomissements, vertiges, sueurs, tachycardie, sécheresse buccale. Surveillance : tolérance neurologique, fréquence cardiaque, efficacité antalgique."
-    }
+    },
       {
         nom: "NaCl 0,9 %",
         statut: "Explicitement nommé",
@@ -1745,8 +1745,7 @@
   domaines: ["Urgences"],
   usage: `Otite externe mycosique — <a href="https://www.sforl.org" target="_blank">selon recommandations ORL</a>.`,
   remarques: "Indiqué en cas d’otite externe fongique. EI : irritation locale. Surveillance : disparition prurit et débris."
-}
-
+},
 {
   nom: "Éconazole",
   statut: "Explicitement nommé",
@@ -2108,25 +2107,29 @@ function getSelectedMentions() {
   return selected;
 }
 
-    function domainMatches(itemDomains, selectedMentions) {
-      if (selectedMentions.length === 0) {
-        return true;
-      }
+function domainMatches(itemDomains, selectedMentions) {
+  if (selectedMentions.length === 0) {
+    return true;
+  }
 
-      if (selectedMentions.includes("Toutes les mentions") && itemDomains.includes("Toutes les mentions")) {
-        return true;
-      }
+  if (selectedMentions.includes("Toutes les mentions") && itemDomains.includes("Toutes les mentions")) {
+    return true;
+  }
 
-      if (selectedMentions.includes("PCS") && (itemDomains.includes("PCS") || itemDomains.includes("Toutes les mentions"))) {
-        return true;
-      }
+  if (selectedMentions.includes("PCS") && (itemDomains.includes("PCS") || itemDomains.includes("Toutes les mentions"))) {
+    return true;
+  }
 
-      if (selectedMentions.includes("Urgences") && (itemDomains.includes("Urgences") || itemDomains.includes("Toutes les mentions"))) {
-        return true;
-      }
+  if (selectedMentions.includes("Urgences") && (itemDomains.includes("Urgences") || itemDomains.includes("Toutes les mentions"))) {
+    return true;
+  }
 
-      return false;
-    }
+  if (selectedMentions.includes("PSM") && (itemDomains.includes("PSM") || itemDomains.includes("Toutes les mentions"))) {
+    return true;
+  }
+
+  return false;
+}
 
     function render() {
       const term = normalize(searchInput.value);
