@@ -247,7 +247,6 @@
     const entries = [
       {
         nom: "Paracétamol",
-        type: "DCI",
         statut: "Classe autorisée",
         classe: "Antalgique palier 1",
         domaines: ["Toutes les mentions"],
@@ -256,7 +255,6 @@
       },
       {
         nom: "Ibuprofène",
-        type: "DCI",
         statut: "Classe autorisée",
         classe: "Antalgique palier 1",
         domaines: ["Toutes les mentions"],
@@ -265,7 +263,6 @@
       },
       {
         nom: "NaCl 0,9 %",
-        type: "DCI",
         statut: "Explicitement nommé",
         classe: "Soluté intraveineux",
         domaines: ["Toutes les mentions"],
@@ -723,7 +720,785 @@
   domaines: ["PCS"],
   usage: "Sans diagnostic médical préalable : traitement hypoglycémiant de première ligne chez un patient diabétique de type 2, conformément aux recommandations en vigueur et selon le profil pondéral/cardiovasculaire.",
   remarques: "CI/prudence : antécédents de pancréatite, troubles digestifs importants ; prudence si rétinopathie diabétique évolutive. EI principaux : nausées, vomissements, diarrhée, diminution de l’appétit. Surveillance : tolérance digestive, poids, hydratation, vigilance ophtalmologique si rétinopathie. Renouvellement impossible sans concertation médicale."
+},
+{
+  nom: "Atorvastatine",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Hypolipémiant de première ligne — statine",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : traitement hypolipémiant de première ligne et prévention du risque cardiovasculaire.",
+  remarques: "CI/prudence : maladie hépatique évolutive, grossesse, allaitement. EI principaux : myalgies, cytolyse hépatique, rarement rhabdomyolyse. Surveillance : bilan lipidique, ALAT/ASAT, douleurs musculaires."
+},
+{
+  nom: "Rosuvastatine",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Hypolipémiant de première ligne — statine",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : traitement hypolipémiant de première ligne et prévention du risque cardiovasculaire.",
+  remarques: "CI/prudence : maladie hépatique évolutive, grossesse, allaitement, insuffisance rénale selon dose. EI principaux : myalgies, cytolyse hépatique, rarement rhabdomyolyse. Surveillance : bilan lipidique, ALAT/ASAT, symptômes musculaires."
+},
+{
+  nom: "Simvastatine",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Hypolipémiant de première ligne — statine",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : traitement hypolipémiant de première ligne et prévention du risque cardiovasculaire.",
+  remarques: "CI/prudence : maladie hépatique évolutive, grossesse, allaitement, nombreuses interactions CYP3A4. EI principaux : myalgies, cytolyse hépatique, rhabdomyolyse rare. Surveillance : bilan lipidique, ALAT/ASAT, douleurs musculaires, interactions."
+},
+{
+  nom: "Pravastatine",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Hypolipémiant de première ligne — statine",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : traitement hypolipémiant de première ligne et prévention du risque cardiovasculaire.",
+  remarques: "CI/prudence : maladie hépatique évolutive, grossesse, allaitement. EI principaux : myalgies, cytolyse hépatique. Surveillance : bilan lipidique, ALAT/ASAT, symptômes musculaires."
+},
+{
+  nom: "Fluvastatine",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Hypolipémiant de première ligne — statine",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : traitement hypolipémiant de première ligne et prévention du risque cardiovasculaire.",
+  remarques: "CI/prudence : maladie hépatique évolutive, grossesse, allaitement. EI principaux : myalgies, troubles digestifs, élévation des transaminases. Surveillance : bilan lipidique, ALAT/ASAT, tolérance musculaire."
+},
+{
+  nom: "Pitavastatine",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Hypolipémiant de première ligne — statine",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : traitement hypolipémiant de première ligne et prévention du risque cardiovasculaire.",
+  remarques: "CI/prudence : maladie hépatique évolutive, grossesse, allaitement. EI principaux : myalgies, céphalées, élévation des enzymes hépatiques. Surveillance : bilan lipidique, ALAT/ASAT, symptômes musculaires."
+},
+{
+  nom: "Ézétimibe",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Hypolipémiant de première ligne — inhibiteur de l’absorption intestinale du cholestérol",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : traitement hypolipémiant de première ligne et prévention du risque cardiovasculaire.",
+  remarques: "CI/prudence : insuffisance hépatique modérée à sévère, grossesse/allaitement selon association. EI principaux : diarrhée, douleurs abdominales, myalgies possibles. Surveillance : bilan lipidique, tolérance hépatique, douleurs musculaires surtout si association avec statine."
+},
+
+{
+  nom: "Ramipril",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Antihypertenseur — IEC",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : adaptation du traitement antihypertenseur pour HTA de stade 2 ou 3, jusqu’à trois classes associées.",
+  remarques: "CI/prudence : grossesse, antécédent d’angiœdème, hyperkaliémie, sténose bilatérale des artères rénales. EI principaux : toux, hypotension, hyperkaliémie, insuffisance rénale fonctionnelle, angiœdème. Surveillance : PA, créatinine/DFG, kaliémie."
+},
+{
+  nom: "Périndopril",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Antihypertenseur — IEC",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : adaptation du traitement antihypertenseur pour HTA de stade 2 ou 3, jusqu’à trois classes associées.",
+  remarques: "CI/prudence : grossesse, antécédent d’angiœdème, hyperkaliémie, sténose des artères rénales. EI principaux : toux, hypotension, hyperkaliémie, altération de la fonction rénale, angiœdème. Surveillance : PA, créatinine/DFG, kaliémie."
+},
+{
+  nom: "Énalapril",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Antihypertenseur — IEC",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : adaptation du traitement antihypertenseur pour HTA de stade 2 ou 3, jusqu’à trois classes associées.",
+  remarques: "CI/prudence : grossesse, antécédent d’angiœdème, hyperkaliémie. EI principaux : toux, hypotension, hyperkaliémie, insuffisance rénale fonctionnelle, angiœdème. Surveillance : PA, créatinine/DFG, kaliémie."
+},
+{
+  nom: "Lisinopril",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Antihypertenseur — IEC",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : adaptation du traitement antihypertenseur pour HTA de stade 2 ou 3, jusqu’à trois classes associées.",
+  remarques: "CI/prudence : grossesse, antécédent d’angiœdème, hyperkaliémie. EI principaux : toux, hypotension, hyperkaliémie, altération rénale, angiœdème. Surveillance : PA, créatinine/DFG, kaliémie."
+},
+{
+  nom: "Captopril",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Antihypertenseur — IEC",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : adaptation du traitement antihypertenseur pour HTA de stade 2 ou 3, jusqu’à trois classes associées.",
+  remarques: "CI/prudence : grossesse, antécédent d’angiœdème, hyperkaliémie. EI principaux : toux, hypotension, hyperkaliémie, insuffisance rénale fonctionnelle, angiœdème. Surveillance : PA, créatinine/DFG, kaliémie."
+},
+{
+  nom: "Fosinopril",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Antihypertenseur — IEC",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : adaptation du traitement antihypertenseur pour HTA de stade 2 ou 3, jusqu’à trois classes associées.",
+  remarques: "CI/prudence : grossesse, antécédent d’angiœdème, hyperkaliémie. EI principaux : toux, hypotension, hyperkaliémie, altération de la fonction rénale, angiœdème. Surveillance : PA, créatinine/DFG, kaliémie."
+},
+{
+  nom: "Trandolapril",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Antihypertenseur — IEC",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : adaptation du traitement antihypertenseur pour HTA de stade 2 ou 3, jusqu’à trois classes associées.",
+  remarques: "CI/prudence : grossesse, antécédent d’angiœdème, hyperkaliémie. EI principaux : toux, hypotension, hyperkaliémie, altération rénale, angiœdème. Surveillance : PA, créatinine/DFG, kaliémie."
+},
+
+{
+  nom: "Candesartan",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Antihypertenseur — ARA2",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : adaptation du traitement antihypertenseur pour HTA de stade 2 ou 3, jusqu’à trois classes associées.",
+  remarques: "CI/prudence : grossesse, hyperkaliémie, sténose bilatérale des artères rénales. EI principaux : hypotension, hyperkaliémie, altération de la fonction rénale, vertiges. Surveillance : PA, créatinine/DFG, kaliémie."
+},
+{
+  nom: "Irbésartan",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Antihypertenseur — ARA2",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : adaptation du traitement antihypertenseur pour HTA de stade 2 ou 3, jusqu’à trois classes associées.",
+  remarques: "CI/prudence : grossesse, hyperkaliémie, sténose des artères rénales. EI principaux : hypotension, hyperkaliémie, insuffisance rénale fonctionnelle, vertiges. Surveillance : PA, créatinine/DFG, kaliémie."
+},
+{
+  nom: "Losartan",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Antihypertenseur — ARA2",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : adaptation du traitement antihypertenseur pour HTA de stade 2 ou 3, jusqu’à trois classes associées.",
+  remarques: "CI/prudence : grossesse, hyperkaliémie, sténose des artères rénales. EI principaux : hypotension, hyperkaliémie, altération de la fonction rénale. Surveillance : PA, créatinine/DFG, kaliémie."
+},
+{
+  nom: "Olmésartan",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Antihypertenseur — ARA2",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : adaptation du traitement antihypertenseur pour HTA de stade 2 ou 3, jusqu’à trois classes associées.",
+  remarques: "CI/prudence : grossesse, hyperkaliémie, sténose des artères rénales. EI principaux : hypotension, hyperkaliémie, altération rénale, vertiges. Surveillance : PA, créatinine/DFG, kaliémie."
+},
+{
+  nom: "Telmisartan",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Antihypertenseur — ARA2",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : adaptation du traitement antihypertenseur pour HTA de stade 2 ou 3, jusqu’à trois classes associées.",
+  remarques: "CI/prudence : grossesse, hyperkaliémie, sténose des artères rénales. EI principaux : hypotension, hyperkaliémie, altération de la fonction rénale. Surveillance : PA, créatinine/DFG, kaliémie."
+},
+{
+  nom: "Valsartan",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Antihypertenseur — ARA2",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : adaptation du traitement antihypertenseur pour HTA de stade 2 ou 3, jusqu’à trois classes associées.",
+  remarques: "CI/prudence : grossesse, hyperkaliémie, sténose des artères rénales. EI principaux : hypotension, hyperkaliémie, insuffisance rénale fonctionnelle, vertiges. Surveillance : PA, créatinine/DFG, kaliémie."
+},
+
+{
+  nom: "Amlodipine",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Antihypertenseur — inhibiteur calcique",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : adaptation du traitement antihypertenseur pour HTA de stade 2 ou 3, jusqu’à trois classes associées.",
+  remarques: "CI/prudence : hypotension sévère, état de choc, sténose aortique serrée à discuter selon contexte. EI principaux : œdèmes des membres inférieurs, céphalées, bouffées vasomotrices, palpitations. Surveillance : PA, œdèmes, tolérance clinique."
+},
+{
+  nom: "Lercanidipine",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Antihypertenseur — inhibiteur calcique",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : adaptation du traitement antihypertenseur pour HTA de stade 2 ou 3, jusqu’à trois classes associées.",
+  remarques: "CI/prudence : hypotension sévère, insuffisance hépatique sévère, interactions avec inhibiteurs puissants du CYP3A4. EI principaux : céphalées, œdèmes, palpitations, rougeur faciale. Surveillance : PA, œdèmes, interactions médicamenteuses."
+},
+{
+  nom: "Félodipine",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Antihypertenseur — inhibiteur calcique",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : adaptation du traitement antihypertenseur pour HTA de stade 2 ou 3, jusqu’à trois classes associées.",
+  remarques: "CI/prudence : hypotension sévère, interactions CYP3A4. EI principaux : œdèmes périphériques, céphalées, rougeurs, palpitations. Surveillance : PA, œdèmes, tolérance clinique."
+},
+{
+  nom: "Manidipine",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Antihypertenseur — inhibiteur calcique",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : adaptation du traitement antihypertenseur pour HTA de stade 2 ou 3, jusqu’à trois classes associées.",
+  remarques: "CI/prudence : hypotension sévère, insuffisance hépatique sévère, interactions CYP3A4. EI principaux : œdèmes, céphalées, palpitations, rougeurs. Surveillance : PA, œdèmes, tolérance."
+},
+
+{
+  nom: "Hydrochlorothiazide",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Antihypertenseur — diurétique thiazidique",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : adaptation du traitement antihypertenseur pour HTA de stade 2 ou 3, jusqu’à trois classes associées.",
+  remarques: "CI/prudence : hyponatrémie, hypokaliémie, déshydratation, insuffisance rénale sévère, goutte. EI principaux : hypokaliémie, hyponatrémie, hyperuricémie, photosensibilité, déshydratation. Surveillance : PA, ionogramme, créatinine/DFG, uricémie selon contexte."
+},
+{
+  nom: "Indapamide",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Antihypertenseur — diurétique thiazidique ou apparenté",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : adaptation du traitement antihypertenseur pour HTA de stade 2 ou 3, jusqu’à trois classes associées.",
+  remarques: "CI/prudence : hyponatrémie, hypokaliémie, insuffisance rénale sévère, insuffisance hépatique sévère, goutte. EI principaux : hypokaliémie, hyponatrémie, déshydratation, vertiges, photosensibilité. Surveillance : PA, ionogramme, créatinine/DFG."
+},
+{
+  nom: "Chlortalidone",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Antihypertenseur — diurétique thiazidique ou apparenté",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : adaptation du traitement antihypertenseur pour HTA de stade 2 ou 3, jusqu’à trois classes associées.",
+  remarques: "CI/prudence : hyponatrémie, hypokaliémie, déshydratation, insuffisance rénale sévère, goutte. EI principaux : hypokaliémie, hyponatrémie, hyperuricémie, déshydratation. Surveillance : PA, ionogramme, créatinine/DFG, uricémie."
+},
+
+{
+  nom: "Metformine",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Antidiabétique oral — biguanide",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : traitement hypoglycémiant chez un patient diabétique de type 2.",
+  remarques: "CI/prudence : insuffisance rénale sévère, hypoxie tissulaire, insuffisance hépatique sévère, alcoolisation aiguë. EI principaux : diarrhée, nausées, douleurs abdominales ; acidose lactique rare mais grave. Surveillance : eGFR/créatinine, tolérance digestive, vitamine B12 si traitement prolongé."
+},
+{
+  nom: "Acarbose",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Antidiabétique oral — inhibiteur des alpha-glucosidases",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : traitement hypoglycémiant chez un patient diabétique de type 2.",
+  remarques: "CI/prudence : maladies inflammatoires intestinales, malabsorption, insuffisance rénale sévère. EI principaux : flatulences, douleurs abdominales, diarrhée. Surveillance : tolérance digestive, glycémie/HbA1c."
+},
+{
+  nom: "Gliclazide",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Antidiabétique oral — sulfamide hypoglycémiant",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : traitement hypoglycémiant chez un patient diabétique de type 2.",
+  remarques: "CI/prudence : insuffisance hépatique sévère, insuffisance rénale sévère, risque d’hypoglycémie, sujet âgé fragile. EI principaux : hypoglycémie, prise de poids, troubles digestifs. Surveillance : glycémies, risque hypoglycémique, adaptation des prises alimentaires."
+},
+{
+  nom: "Glimépiride",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Antidiabétique oral — sulfamide hypoglycémiant",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : traitement hypoglycémiant chez un patient diabétique de type 2.",
+  remarques: "CI/prudence : insuffisance hépatique sévère, insuffisance rénale sévère, risque d’hypoglycémie. EI principaux : hypoglycémie, prise de poids, troubles digestifs. Surveillance : glycémies, risque hypoglycémique."
+},
+{
+  nom: "Glipizide",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Antidiabétique oral — sulfamide hypoglycémiant",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : traitement hypoglycémiant chez un patient diabétique de type 2.",
+  remarques: "CI/prudence : insuffisance hépatique sévère, insuffisance rénale sévère, risque d’hypoglycémie. EI principaux : hypoglycémie, troubles digestifs, prise de poids. Surveillance : glycémies, risque hypoglycémique."
+},
+{
+  nom: "Répaglinide",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Antidiabétique oral — glinide",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : traitement hypoglycémiant chez un patient diabétique de type 2.",
+  remarques: "CI/prudence : insuffisance hépatique sévère, association au gemfibrozil, risque d’hypoglycémie. EI principaux : hypoglycémie, prise de poids. Surveillance : glycémies, repas associés aux prises."
+},
+{
+  nom: "Pioglitazone",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Antidiabétique oral — glitazone",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : traitement hypoglycémiant chez un patient diabétique de type 2.",
+  remarques: "CI/prudence : insuffisance cardiaque, antécédent de cancer vésical, hématurie inexpliquée. EI principaux : rétention hydrosodée, prise de poids, œdèmes, fractures. Surveillance : poids, œdèmes, signes d’insuffisance cardiaque."
+},
+{
+  nom: "Sitagliptine",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Antidiabétique oral — inhibiteur de la DPP-4",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : traitement hypoglycémiant chez un patient diabétique de type 2.",
+  remarques: "CI/prudence : ajustement si insuffisance rénale. EI principaux : infections ORL, céphalées, pancréatite rare. Surveillance : eGFR, tolérance clinique, douleur abdominale inhabituelle."
+},
+{
+  nom: "Vildagliptine",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Antidiabétique oral — inhibiteur de la DPP-4",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : traitement hypoglycémiant chez un patient diabétique de type 2.",
+  remarques: "CI/prudence : atteinte hépatique, insuffisance cardiaque selon contexte. EI principaux : céphalées, vertiges, troubles digestifs ; cytolyse possible. Surveillance : ALAT/ASAT, tolérance."
+},
+{
+  nom: "Saxagliptine",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Antidiabétique oral — inhibiteur de la DPP-4",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : traitement hypoglycémiant chez un patient diabétique de type 2.",
+  remarques: "CI/prudence : insuffisance rénale, prudence si insuffisance cardiaque. EI principaux : infections ORL, céphalées, troubles digestifs. Surveillance : eGFR, tolérance clinique."
+},
+{
+  nom: "Linagliptine",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Antidiabétique oral — inhibiteur de la DPP-4",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : traitement hypoglycémiant chez un patient diabétique de type 2.",
+  remarques: "CI/prudence : pancréatite antérieure à discuter. EI principaux : rhinopharyngite, céphalées, pancréatite rare. Surveillance : tolérance clinique."
+},
+{
+  nom: "Dapagliflozine",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Antidiabétique oral — inhibiteur SGLT2",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : traitement hypoglycémiant chez un patient diabétique de type 2.",
+  remarques: "CI/prudence : insuffisance rénale selon eGFR/indication, déshydratation, antécédents d’acidocétose, infections uro-génitales récidivantes. EI principaux : mycoses génitales, infections urinaires, hypotension, déshydratation ; acidocétose euglycémique rare. Surveillance : eGFR, hydratation, infections uro-génitales."
+},
+{
+  nom: "Empagliflozine",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Antidiabétique oral — inhibiteur SGLT2",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : traitement hypoglycémiant chez un patient diabétique de type 2.",
+  remarques: "CI/prudence : insuffisance rénale selon eGFR/indication, déshydratation, antécédents d’acidocétose. EI principaux : mycoses génitales, infections urinaires, hypotension, déshydratation ; acidocétose euglycémique rare. Surveillance : eGFR, hydratation, infections uro-génitales."
+},
+{
+  nom: "Canagliflozine",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Antidiabétique oral — inhibiteur SGLT2",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : traitement hypoglycémiant chez un patient diabétique de type 2.",
+  remarques: "CI/prudence : insuffisance rénale selon eGFR/indication, déshydratation, antécédents d’acidocétose. EI principaux : mycoses génitales, infections urinaires, hypotension, déshydratation. Surveillance : eGFR, hydratation, tolérance clinique."
+},
+{
+  nom: "Sémaglutide",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Antidiabétique oral ou injectable — agoniste du GLP-1",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : traitement hypoglycémiant chez un patient diabétique de type 2.",
+  remarques: "CI/prudence : antécédents de pancréatite, troubles digestifs importants ; prudence si rétinopathie diabétique évolutive. EI principaux : nausées, vomissements, diarrhée, diminution de l’appétit. Surveillance : tolérance digestive, poids, hydratation, vigilance ophtalmologique si rétinopathie."
+},
+{
+  nom: "Liraglutide",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Antidiabétique injectable — agoniste du GLP-1",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : traitement hypoglycémiant chez un patient diabétique de type 2.",
+  remarques: "CI/prudence : antécédents de pancréatite, troubles digestifs importants. EI principaux : nausées, vomissements, diarrhée, diminution de l’appétit. Surveillance : tolérance digestive, poids, signes de déshydratation."
+},
+{
+  nom: "Dulaglutide",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Antidiabétique injectable — agoniste du GLP-1",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : traitement hypoglycémiant chez un patient diabétique de type 2.",
+  remarques: "CI/prudence : antécédents de pancréatite, troubles digestifs importants. EI principaux : nausées, diarrhée, vomissements, perte d’appétit. Surveillance : tolérance digestive, poids, hydratation."
+},
+{
+  nom: "Exénatide",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Antidiabétique injectable — agoniste du GLP-1",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : traitement hypoglycémiant chez un patient diabétique de type 2.",
+  remarques: "CI/prudence : insuffisance rénale sévère, pancréatite antérieure. EI principaux : nausées, vomissements, diarrhée. Surveillance : tolérance digestive, hydratation, fonction rénale selon contexte."
+},
+{
+  nom: "Lixisénatide",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Antidiabétique injectable — agoniste du GLP-1",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : traitement hypoglycémiant chez un patient diabétique de type 2.",
+  remarques: "CI/prudence : pancréatite antérieure, troubles digestifs marqués. EI principaux : nausées, vomissements, diarrhée. Surveillance : tolérance digestive, hydratation."
+},
+{
+  nom: "Tirzépatide",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Antidiabétique injectable — agoniste GIP/GLP-1",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : traitement hypoglycémiant chez un patient diabétique de type 2.",
+  remarques: "CI/prudence : antécédents de pancréatite, troubles digestifs importants. EI principaux : nausées, diarrhée, vomissements, baisse de l’appétit. Surveillance : tolérance digestive, poids, hydratation."
+},
+{
+  nom: "Insuline isophane",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Antidiabétique injectable — insuline d’action intermédiaire",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : traitement hypoglycémiant chez un patient diabétique, insuline d’action intermédiaire.",
+  remarques: "CI/prudence : hypoglycémie en cours. EI principaux : hypoglycémie, prise de poids, lipodystrophies, réactions locales. Surveillance : glycémies capillaires, hypoglycémies, technique d’injection."
+},
+{
+  nom: "Insuline glargine",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Antidiabétique injectable — insuline lente",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : traitement hypoglycémiant chez un patient diabétique, insuline lente.",
+  remarques: "CI/prudence : hypoglycémie en cours. EI principaux : hypoglycémie, prise de poids, réactions au point d’injection. Surveillance : glycémies, hypoglycémies, adaptation posologique selon schéma médical."
+},
+{
+  nom: "Insuline détémir",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Antidiabétique injectable — insuline lente",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : traitement hypoglycémiant chez un patient diabétique, insuline lente.",
+  remarques: "CI/prudence : hypoglycémie en cours. EI principaux : hypoglycémie, prise de poids, réactions locales. Surveillance : glycémies, hypoglycémies, technique d’injection."
+},
+{
+  nom: "Insuline dégludec",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Antidiabétique injectable — insuline lente",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : traitement hypoglycémiant chez un patient diabétique, insuline lente.",
+  remarques: "CI/prudence : hypoglycémie en cours. EI principaux : hypoglycémie, prise de poids, réactions locales. Surveillance : glycémies, hypoglycémies, adaptation posologique."
+},
+
+{
+  nom: "Salbutamol",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Bronchodilatateur inhalé de courte durée d’action — bêta-2 mimétique",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : bronchodilatateur inhalé, hors nébuliseur.",
+  remarques: "CI/prudence : tachyarythmie, cardiopathie décompensée, hyperthyroïdie. EI principaux : tremblements, tachycardie, palpitations, nervosité. Surveillance : fréquence d’utilisation, efficacité clinique, tolérance cardiovasculaire."
+},
+{
+  nom: "Terbutaline",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Bronchodilatateur inhalé de courte durée d’action — bêta-2 mimétique",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : bronchodilatateur inhalé, hors nébuliseur.",
+  remarques: "CI/prudence : tachyarythmie, cardiopathie décompensée, hyperthyroïdie. EI principaux : tremblements, tachycardie, palpitations, nervosité. Surveillance : fréquence d’utilisation, efficacité, tolérance cardiovasculaire."
+},
+{
+  nom: "Ipratropium",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Bronchodilatateur inhalé de courte durée d’action — anticholinergique",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : bronchodilatateur inhalé, hors nébuliseur.",
+  remarques: "CI/prudence : glaucome à angle fermé si projection oculaire, troubles urinaires. EI principaux : sécheresse buccale, irritation pharyngée, goût amer. Surveillance : tolérance locale, symptômes urinaires, efficacité clinique."
+},
+{
+  nom: "Formotérol",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Bronchodilatateur inhalé de longue durée d’action — bêta-2 mimétique",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : bronchodilatateur inhalé de longue durée d’action, hors nébuliseur.",
+  remarques: "CI/prudence : tachyarythmie, cardiopathie décompensée. EI principaux : tremblements, tachycardie, palpitations. Surveillance : efficacité, observance, tolérance cardiovasculaire."
+},
+{
+  nom: "Salmétérol",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Bronchodilatateur inhalé de longue durée d’action — bêta-2 mimétique",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : bronchodilatateur inhalé de longue durée d’action, hors nébuliseur.",
+  remarques: "CI/prudence : tachyarythmie, cardiopathie décompensée. EI principaux : tremblements, palpitations, céphalées. Surveillance : efficacité, bonne technique d’inhalation, tolérance cardiovasculaire."
+},
+{
+  nom: "Indacatérol",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Bronchodilatateur inhalé de longue durée d’action — bêta-2 mimétique",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : bronchodilatateur inhalé de longue durée d’action, hors nébuliseur.",
+  remarques: "CI/prudence : tachyarythmie, cardiopathie décompensée. EI principaux : toux après inhalation, tremblements, palpitations. Surveillance : efficacité, tolérance, technique d’inhalation."
+},
+{
+  nom: "Olodatérol",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Bronchodilatateur inhalé de longue durée d’action — bêta-2 mimétique",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : bronchodilatateur inhalé de longue durée d’action, hors nébuliseur.",
+  remarques: "CI/prudence : tachyarythmie, cardiopathie décompensée. EI principaux : palpitations, céphalées, tremblements. Surveillance : efficacité, tolérance cardiovasculaire."
+},
+{
+  nom: "Tiotropium",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Bronchodilatateur inhalé de longue durée d’action — anticholinergique",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : bronchodilatateur inhalé de longue durée d’action, hors nébuliseur.",
+  remarques: "CI/prudence : glaucome à angle fermé, rétention urinaire. EI principaux : sécheresse buccale, constipation, symptômes urinaires. Surveillance : tolérance anticholinergique, efficacité clinique."
+},
+{
+  nom: "Glycopyrronium",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Bronchodilatateur inhalé de longue durée d’action — anticholinergique",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : bronchodilatateur inhalé de longue durée d’action, hors nébuliseur.",
+  remarques: "CI/prudence : glaucome à angle fermé, rétention urinaire. EI principaux : sécheresse buccale, constipation, symptômes urinaires. Surveillance : tolérance anticholinergique, efficacité."
+},
+{
+  nom: "Aclidinium",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Bronchodilatateur inhalé de longue durée d’action — anticholinergique",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : bronchodilatateur inhalé de longue durée d’action, hors nébuliseur.",
+  remarques: "CI/prudence : glaucome à angle fermé, rétention urinaire. EI principaux : céphalées, sécheresse buccale, nausées. Surveillance : tolérance, efficacité clinique."
+},
+{
+  nom: "Umeclidinium",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Bronchodilatateur inhalé de longue durée d’action — anticholinergique",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : bronchodilatateur inhalé de longue durée d’action, hors nébuliseur.",
+  remarques: "CI/prudence : glaucome à angle fermé, rétention urinaire. EI principaux : sécheresse buccale, constipation, symptômes urinaires. Surveillance : tolérance anticholinergique, efficacité."
+},
+{
+  nom: "Indacatérol + glycopyrronium",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Association de bronchodilatateurs inhalés d’action prolongée — LABA/LAMA",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : association de bronchodilatateurs inhalés d’action prolongée, hors nébuliseur.",
+  remarques: "CI/prudence : cardiopathie décompensée, glaucome à angle fermé, rétention urinaire. EI principaux : palpitations, sécheresse buccale, toux, tremblements. Surveillance : efficacité clinique, technique d’inhalation, tolérance cardio-anticholinergique."
+},
+{
+  nom: "Umeclidinium + vilantérol",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Association de bronchodilatateurs inhalés d’action prolongée — LABA/LAMA",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : association de bronchodilatateurs inhalés d’action prolongée, hors nébuliseur.",
+  remarques: "CI/prudence : cardiopathie décompensée, glaucome à angle fermé, rétention urinaire. EI principaux : palpitations, sécheresse buccale, céphalées. Surveillance : efficacité, tolérance, technique d’inhalation."
+},
+{
+  nom: "Tiotropium + olodatérol",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Association de bronchodilatateurs inhalés d’action prolongée — LABA/LAMA",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : association de bronchodilatateurs inhalés d’action prolongée, hors nébuliseur.",
+  remarques: "CI/prudence : cardiopathie décompensée, glaucome à angle fermé, rétention urinaire. EI principaux : palpitations, sécheresse buccale, toux. Surveillance : efficacité clinique, tolérance, technique d’inhalation."
+},
+{
+  nom: "Aclidinium + formotérol",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Association de bronchodilatateurs inhalés d’action prolongée — LABA/LAMA",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : association de bronchodilatateurs inhalés d’action prolongée, hors nébuliseur.",
+  remarques: "CI/prudence : cardiopathie décompensée, glaucome à angle fermé, rétention urinaire. EI principaux : tremblements, sécheresse buccale, céphalées. Surveillance : efficacité clinique, tolérance, technique d’inhalation."
+},
+{
+  nom: "Béclométasone + formotérol",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Association bronchodilatateur d’action prolongée + corticoïde inhalé — ICS/LABA",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : association bronchodilatateur d’action prolongée + corticoïde inhalé, hors nébuliseur.",
+  remarques: "CI/prudence : infection respiratoire non contrôlée, mauvaise technique d’inhalation. EI principaux : dysphonie, candidose buccale, tremblements, palpitations. Surveillance : rinçage buccal, efficacité clinique, exacerbations, tolérance."
+},
+{
+  nom: "Budésonide + formotérol",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Association bronchodilatateur d’action prolongée + corticoïde inhalé — ICS/LABA",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : association bronchodilatateur d’action prolongée + corticoïde inhalé, hors nébuliseur.",
+  remarques: "CI/prudence : infection respiratoire non contrôlée. EI principaux : candidose buccale, dysphonie, tremblements, palpitations. Surveillance : rinçage buccal, bonne technique d’inhalation, efficacité clinique."
+},
+{
+  nom: "Fluticasone + salmétérol",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Association bronchodilatateur d’action prolongée + corticoïde inhalé — ICS/LABA",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : association bronchodilatateur d’action prolongée + corticoïde inhalé, hors nébuliseur.",
+  remarques: "CI/prudence : infection respiratoire non contrôlée. EI principaux : candidose buccale, dysphonie, palpitations, céphalées. Surveillance : rinçage buccal, efficacité clinique, tolérance."
+},
+{
+  nom: "Fluticasone + vilantérol",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Association bronchodilatateur d’action prolongée + corticoïde inhalé — ICS/LABA",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : association bronchodilatateur d’action prolongée + corticoïde inhalé, hors nébuliseur.",
+  remarques: "CI/prudence : infection respiratoire non contrôlée. EI principaux : candidose buccale, dysphonie, palpitations. Surveillance : rinçage buccal, tolérance, efficacité."
+},
+{
+  nom: "Oxygène médical",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Oxygénothérapie",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : adaptation du dispositif d’oxygénothérapie après demande d’entente préalable.",
+  remarques: "CI/prudence : risque de combustion/incendie, mésusage du débit, risque d’hypercapnie chez certains patients. EI principaux : sécheresse nasale, irritation, épistaxis, rétention de CO2 selon terrain. Surveillance : SpO2, tolérance clinique, observance, sécurité à domicile."
+},
+
+{
+  nom: "Furosémide",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Traitement de l’insuffisance cardiaque — diurétique de l’anse",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : traitement de l’insuffisance cardiaque dans le cadre d’une conduite diagnostique et de choix thérapeutiques déterminés par un médecin.",
+  remarques: "CI/prudence : déshydratation, hypokaliémie, hyponatrémie, insuffisance rénale sévère à surveiller. EI principaux : déshydratation, hypotension, hypokaliémie, hyponatrémie. Surveillance : poids, PA, ionogramme, créatinine/DFG, signes de congestion."
+},
+{
+  nom: "Bumétanide",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Traitement de l’insuffisance cardiaque — diurétique de l’anse",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : traitement de l’insuffisance cardiaque dans le cadre d’une conduite diagnostique et de choix thérapeutiques déterminés par un médecin.",
+  remarques: "CI/prudence : déshydratation, troubles hydro-électrolytiques. EI principaux : hypotension, hypokaliémie, hyponatrémie, déshydratation. Surveillance : poids, ionogramme, créatinine/DFG, signes de congestion."
+},
+{
+  nom: "Torasémide",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Traitement de l’insuffisance cardiaque — diurétique de l’anse",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : traitement de l’insuffisance cardiaque dans le cadre d’une conduite diagnostique et de choix thérapeutiques déterminés par un médecin.",
+  remarques: "CI/prudence : déshydratation, hypokaliémie, hyponatrémie. EI principaux : hypotension, déshydratation, troubles hydro-électrolytiques. Surveillance : poids, ionogramme, créatinine/DFG, PA."
+},
+{
+  nom: "Spironolactone",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Traitement de l’insuffisance cardiaque — antagoniste des récepteurs de l’aldostérone / diurétique épargneur de potassium",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : traitement de l’insuffisance cardiaque dans le cadre d’une conduite diagnostique et de choix thérapeutiques déterminés par un médecin.",
+  remarques: "CI/prudence : hyperkaliémie, insuffisance rénale sévère. EI principaux : hyperkaliémie, gynécomastie, hypotension, insuffisance rénale fonctionnelle. Surveillance : kaliémie, créatinine/DFG, PA."
+},
+{
+  nom: "Éplérénone",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Traitement de l’insuffisance cardiaque — antagoniste des récepteurs de l’aldostérone / diurétique épargneur de potassium",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : traitement de l’insuffisance cardiaque dans le cadre d’une conduite diagnostique et de choix thérapeutiques déterminés par un médecin.",
+  remarques: "CI/prudence : hyperkaliémie, insuffisance rénale sévère, interactions CYP3A4. EI principaux : hyperkaliémie, hypotension, insuffisance rénale fonctionnelle. Surveillance : kaliémie, créatinine/DFG, interactions médicamenteuses."
+},
+{
+  nom: "Amiloride",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Traitement de l’insuffisance cardiaque — diurétique épargneur de potassium",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : traitement de l’insuffisance cardiaque dans le cadre d’une conduite diagnostique et de choix thérapeutiques déterminés par un médecin.",
+  remarques: "CI/prudence : hyperkaliémie, insuffisance rénale sévère. EI principaux : hyperkaliémie, nausées, hypotension. Surveillance : kaliémie, créatinine/DFG, PA."
+},
+{
+  nom: "Ramipril",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Traitement de l’insuffisance cardiaque — IEC",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : traitement de l’insuffisance cardiaque dans le cadre d’une conduite diagnostique et de choix thérapeutiques déterminés par un médecin.",
+  remarques: "CI/prudence : grossesse, antécédent d’angiœdème, hyperkaliémie, sténose des artères rénales. EI principaux : toux, hypotension, hyperkaliémie, insuffisance rénale fonctionnelle, angiœdème. Surveillance : PA, créatinine/DFG, kaliémie."
+},
+{
+  nom: "Énalapril",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Traitement de l’insuffisance cardiaque — IEC",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : traitement de l’insuffisance cardiaque dans le cadre d’une conduite diagnostique et de choix thérapeutiques déterminés par un médecin.",
+  remarques: "CI/prudence : grossesse, antécédent d’angiœdème, hyperkaliémie. EI principaux : toux, hypotension, hyperkaliémie, altération rénale, angiœdème. Surveillance : PA, créatinine/DFG, kaliémie."
+},
+{
+  nom: "Périndopril",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Traitement de l’insuffisance cardiaque — IEC",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : traitement de l’insuffisance cardiaque dans le cadre d’une conduite diagnostique et de choix thérapeutiques déterminés par un médecin.",
+  remarques: "CI/prudence : grossesse, antécédent d’angiœdème, hyperkaliémie. EI principaux : toux, hypotension, hyperkaliémie, altération rénale. Surveillance : PA, créatinine/DFG, kaliémie."
+},
+{
+  nom: "Candesartan",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Traitement de l’insuffisance cardiaque — ARA2",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : traitement de l’insuffisance cardiaque dans le cadre d’une conduite diagnostique et de choix thérapeutiques déterminés par un médecin.",
+  remarques: "CI/prudence : grossesse, hyperkaliémie, insuffisance rénale. EI principaux : hypotension, hyperkaliémie, altération de la fonction rénale. Surveillance : PA, créatinine/DFG, kaliémie."
+},
+{
+  nom: "Valsartan",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Traitement de l’insuffisance cardiaque — ARA2",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : traitement de l’insuffisance cardiaque dans le cadre d’une conduite diagnostique et de choix thérapeutiques déterminés par un médecin.",
+  remarques: "CI/prudence : grossesse, hyperkaliémie, insuffisance rénale. EI principaux : hypotension, hyperkaliémie, altération rénale. Surveillance : PA, créatinine/DFG, kaliémie."
+},
+{
+  nom: "Losartan",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Traitement de l’insuffisance cardiaque — ARA2",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : traitement de l’insuffisance cardiaque dans le cadre d’une conduite diagnostique et de choix thérapeutiques déterminés par un médecin.",
+  remarques: "CI/prudence : grossesse, hyperkaliémie, insuffisance rénale. EI principaux : hypotension, hyperkaliémie, altération rénale. Surveillance : PA, créatinine/DFG, kaliémie."
+},
+{
+  nom: "Dapagliflozine",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Traitement de l’insuffisance cardiaque — inhibiteur SGLT2 (gliflozine)",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : traitement de l’insuffisance cardiaque dans le cadre d’une conduite diagnostique et de choix thérapeutiques déterminés par un médecin.",
+  remarques: "CI/prudence : insuffisance rénale selon eGFR/indication, déshydratation, infections uro-génitales récidivantes, antécédent d’acidocétose. EI principaux : mycoses génitales, infections urinaires, hypotension, déshydratation. Surveillance : eGFR, hydratation, poids, tolérance clinique."
+},
+{
+  nom: "Empagliflozine",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Traitement de l’insuffisance cardiaque — inhibiteur SGLT2 (gliflozine)",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : traitement de l’insuffisance cardiaque dans le cadre d’une conduite diagnostique et de choix thérapeutiques déterminés par un médecin.",
+  remarques: "CI/prudence : insuffisance rénale selon eGFR/indication, déshydratation, infections uro-génitales récidivantes. EI principaux : mycoses génitales, infections urinaires, hypotension, déshydratation. Surveillance : eGFR, hydratation, poids, tolérance."
+},
+
+{
+  nom: "Pramipexole",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Maladie de Parkinson — agoniste dopaminergique",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : en cas de suspicion de déséquilibre du traitement chez un patient atteint de maladie de Parkinson.",
+  remarques: "CI/prudence : hypotension orthostatique, troubles du contrôle des impulsions, hallucinations. EI principaux : somnolence, nausées, hallucinations, hypotension orthostatique. Surveillance : état neuropsychiatrique, somnolence, impulsivité, PA."
+},
+{
+  nom: "Ropinirole",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Maladie de Parkinson — agoniste dopaminergique",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : en cas de suspicion de déséquilibre du traitement chez un patient atteint de maladie de Parkinson.",
+  remarques: "CI/prudence : hypotension orthostatique, troubles du contrôle des impulsions, hallucinations. EI principaux : nausées, somnolence, hallucinations, hypotension. Surveillance : tolérance neuropsychiatrique, somnolence, PA."
+},
+{
+  nom: "Rotigotine",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Maladie de Parkinson — agoniste dopaminergique",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : en cas de suspicion de déséquilibre du traitement chez un patient atteint de maladie de Parkinson.",
+  remarques: "CI/prudence : troubles du contrôle des impulsions, hallucinations, réactions cutanées au patch. EI principaux : nausées, somnolence, réactions locales, hallucinations. Surveillance : peau, état neuropsychiatrique, somnolence."
+},
+{
+  nom: "Piribédil",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Maladie de Parkinson — agoniste dopaminergique",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : en cas de suspicion de déséquilibre du traitement chez un patient atteint de maladie de Parkinson.",
+  remarques: "CI/prudence : hypotension orthostatique, troubles du contrôle des impulsions, hallucinations. EI principaux : nausées, somnolence, hypotension, hallucinations. Surveillance : PA, tolérance neuropsychiatrique."
+},
+{
+  nom: "Apomorphine",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Maladie de Parkinson — agoniste dopaminergique",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : en cas de suspicion de déséquilibre du traitement chez un patient atteint de maladie de Parkinson.",
+  remarques: "CI/prudence : hypotension, nausées, troubles neuropsychiatriques. EI principaux : nausées, hypotension orthostatique, somnolence, nodules sous-cutanés selon voie. Surveillance : PA, tolérance clinique, état neuropsychiatrique."
+},
+{
+  nom: "Lévodopa + bensérazide",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Maladie de Parkinson — précurseur de la dopamine (L-DOPA)",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : en cas de suspicion de déséquilibre du traitement chez un patient atteint de maladie de Parkinson.",
+  remarques: "CI/prudence : dyskinésies, fluctuations motrices, hypotension, hallucinations. EI principaux : nausées, hypotension orthostatique, dyskinésies, fluctuations on-off, hallucinations. Surveillance : efficacité motrice, dyskinésies, hypotension, tolérance neuropsychiatrique."
+},
+{
+  nom: "Lévodopa + carbidopa",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Maladie de Parkinson — précurseur de la dopamine (L-DOPA)",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : en cas de suspicion de déséquilibre du traitement chez un patient atteint de maladie de Parkinson.",
+  remarques: "CI/prudence : dyskinésies, fluctuations motrices, hypotension, hallucinations. EI principaux : nausées, hypotension orthostatique, dyskinésies, fluctuations on-off, hallucinations. Surveillance : efficacité motrice, dyskinésies, hypotension, tolérance neuropsychiatrique."
+},
+{
+  nom: "Sélégiline",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Maladie de Parkinson — IMAO-B",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : en cas de suspicion de déséquilibre du traitement chez un patient atteint de maladie de Parkinson.",
+  remarques: "CI/prudence : interactions sérotoninergiques, HTA, troubles du sommeil. EI principaux : insomnie, nausées, hypotension, hallucinations. Surveillance : interactions, PA, sommeil, tolérance neuropsychiatrique."
+},
+{
+  nom: "Rasagiline",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Maladie de Parkinson — IMAO-B",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : en cas de suspicion de déséquilibre du traitement chez un patient atteint de maladie de Parkinson.",
+  remarques: "CI/prudence : interactions sérotoninergiques, insuffisance hépatique sévère. EI principaux : céphalées, hypotension, dyskinésies, hallucinations. Surveillance : interactions médicamenteuses, PA, tolérance neuropsychiatrique."
+},
+{
+  nom: "Safinamide",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Maladie de Parkinson — IMAO-B",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : en cas de suspicion de déséquilibre du traitement chez un patient atteint de maladie de Parkinson.",
+  remarques: "CI/prudence : interactions sérotoninergiques, insuffisance hépatique sévère. EI principaux : dyskinésies, somnolence, nausées, hallucinations. Surveillance : interactions, tolérance neuropsychiatrique, efficacité clinique."
+},
+
+{
+  nom: "Chlorure de potassium",
+  statut: "Avec diagnostic médical préalable",
+  classe: "Supplémentation potassique",
+  domaines: ["PCS"],
+  usage: "Avec diagnostic médical préalable : potassium si hypokaliémie.",
+  remarques: "CI/prudence : hyperkaliémie, insuffisance rénale sévère, associations hyperkaliémiantes. EI principaux : irritation digestive, nausées, hyperkaliémie, troubles du rythme si surdosage. Surveillance : kaliémie, créatinine/DFG, ECG selon sévérité."
 }
+      
     ];
 
     const searchInput = document.getElementById("searchInput");
