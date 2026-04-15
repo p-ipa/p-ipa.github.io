@@ -1,15 +1,50 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<div class="header">
-  <img src="PIPA.png" alt="PIPA - prescription infirmière avancée">
+
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --text: #1f2937;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
     .header {
-  height: 60px;          
-  display: flex;
-  align-items: center;
-}
+      height: 45px;              
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding-left: 10px;
+      background: white;
+    }
+
+    .header img {
+      height: 100%;
+      width: auto;
+      display: block;
+    }
+
+    .container {
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="header">
+    <img src="PIPA.png" alt="PIPA - prescription infirmière avancée">
+  </div>
+
+  <div class="container">
 </div>
  <style>
   :root {
