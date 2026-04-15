@@ -227,7 +227,6 @@
         <thead>
           <tr>
             <th>Nom</th>
-            <th>Type</th>
             <th>Statut réglementaire</th>
             <th>Classe</th>
             <th>Domaine IPA</th>
@@ -785,21 +784,20 @@
       resultCount.textContent = `${filtered.length} résultat(s) sur ${entries.length}`;
 
       if (!filtered.length) {
-        tableBody.innerHTML = `<tr><td colspan="7" class="empty">Aucun résultat.</td></tr>`;
+        tableBody.innerHTML = `<tr><td colspan="6" class="empty">Aucun résultat.</td></tr>`;
         return;
       }
 
-      tableBody.innerHTML = filtered.map(item => `
-        <tr>
-          <td><strong>${item.nom}</strong></td>
-          <td>${item.type}</td>
-          <td>${item.statut}</td>
-          <td>${item.classe}</td>
-          <td>${item.domaines.map(d => `<span class="badge">${d}</span>`).join("")}</td>
-          <td>${item.usage}</td>
-          <td>${item.remarques}</td>
-        </tr>
-      `).join("");
+tableBody.innerHTML = filtered.map(item => `
+  <tr>
+    <td><strong>${item.nom}</strong></td>
+    <td>${item.statut}</td>
+    <td>${item.classe}</td>
+    <td>${item.domaines.map(d => `<span class="badge">${d}</span>`).join("")}</td>
+    <td>${item.usage}</td>
+    <td>${item.remarques}</td>
+  </tr>
+`).join("");
     }
 
     searchInput.addEventListener("input", render);
