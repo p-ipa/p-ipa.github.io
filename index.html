@@ -220,6 +220,10 @@
             <input type="checkbox" id="mentionUrgences">
             Urgences
           </label>
+          <label>
+          <input type="checkbox" id="mentionPSM">
+            PSM
+            </label>
         </div>
       </div>
 
@@ -2005,6 +2009,7 @@
     const mentionToutes = document.getElementById("mentionToutes");
     const mentionPCS = document.getElementById("mentionPCS");
     const mentionUrgences = document.getElementById("mentionUrgences");
+    const mentionPSM = document.getElementById("mentionPSM");
     const tableBody = document.getElementById("tableBody");
     const resultCount = document.getElementById("resultCount");
 
@@ -2015,13 +2020,14 @@
         .replace(/[\u0300-\u036f]/g, "");
     }
 
-    function getSelectedMentions() {
-      const selected = [];
-      if (mentionToutes.checked) selected.push("Toutes les mentions");
-      if (mentionPCS.checked) selected.push("PCS");
-      if (mentionUrgences.checked) selected.push("Urgences");
-      return selected;
-    }
+function getSelectedMentions() {
+  const selected = [];
+  if (mentionToutes.checked) selected.push("Toutes les mentions");
+  if (mentionPCS.checked) selected.push("PCS");
+  if (mentionUrgences.checked) selected.push("Urgences");
+  if (mentionPSM.checked) selected.push("PSM");
+  return selected;
+}
 
     function domainMatches(itemDomains, selectedMentions) {
       if (selectedMentions.length === 0) {
@@ -2083,6 +2089,7 @@ tableBody.innerHTML = filtered.map(item => `
     mentionToutes.addEventListener("change", render);
     mentionPCS.addEventListener("change", render);
     mentionUrgences.addEventListener("change", render);
+    mentionPSM.addEventListener("change", render);
 
     render();
   </script>
