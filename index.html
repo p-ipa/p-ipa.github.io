@@ -181,17 +181,19 @@
       </a>
     </p>
 
-    <div class="notice">
-      Recherche par DCI, indication/usage ou classe thérapeutique. Privilégiez une saisie des 1ères lettres du mot recherché, afin d'éviter les résultats nuls (par faute de frappe ou de terminologie)
-    </div>
 
     <section class="panel">
-      <div class="search-layout">
-        <input
-          id="searchInput"
-          type="text"
-          placeholder="Rechercher : DCI, indication, classe thérapeutique..."
-        />
+<div class="search-layout">
+  <div>
+    <input
+      id="searchInput"
+      type="text"
+      placeholder="Rechercher : DCI, indication, classe thérapeutique..."
+    />
+    <div class="search-help">
+      Privilégiez une saisie des premières lettres du mot recherché, afin d’éviter les résultats nuls en cas de faute de frappe ou de terminologie différente.
+    </div>
+  </div>
 
         <div class="filters-box">
           <label>
@@ -537,7 +539,7 @@
         domaines: ["Toutes les mentions", "Urgences"],
         usage: "Prise en charge en urgence d'une suspicion de surdosage aux opioïdes.",
         remarques: "Prudence : durée d'action plus courte que certains opioïdes. EI principal : syndrome de sevrage aigu chez une personne dépendante. Surveillance : conscience, ventilation, récidive de dépression respiratoire, appel au SAMU/SMUR selon contexte."
-      }
+      },
       {
   nom: "Ramipril",
   type: "DCI",
