@@ -1,12 +1,191 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>P-IPA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: #f5f7fa;
+    }
+
+    h1 {
+      color: #1e3a8a;
+    }
+
+    .subtitle {
+      color: #444;
+      margin-bottom: 20px;
+    }
+
+    input, select {
+      padding: 10px;
+      margin: 5px 5px 20px 0;
+      width: 260px;
+    }
+
+    .card {
+      background: white;
+      padding: 15px;
+      margin-bottom: 12px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .allowed {
+      color: green;
+      font-weight: bold;
+    }
+
+    .restricted {
+      color: orange;
+      font-weight: bold;
+    }
+
+    .forbidden {
+      color: red;
+      font-weight: bold;
+    }
+
+    a {
+      color: #1e3a8a;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>P-IPA</h1>
-  <p>Le site est en cours de création.</p>
+
+<h1>P-IPA</h1>
+
+<p class="subtitle">
+Prescription de l’infirmier(e) en pratique avancée — DCI selon l’annexe VI de l’arrêté du 25 avril 2025.<br><br>
+🔎 Vérification officielle des spécialités et RCP :
+<a href="https://base-donnees-publique.medicaments.gouv.fr/" target="_blank">
+Base de données publique des médicaments (ANSM)
+</a>
+</p>
+
+<input type="text" id="search" placeholder="Rechercher une DCI...">
+<select id="filter">
+  <option value="">Tous les domaines</option>
+  <option value="Commun">Commun</option>
+  <option value="Urgences">Urgences</option>
+  <option value="PCS">PCS</option>
+</select>
+
+<div id="results"></div>
+
+<script>
+const data = [
+  {
+    name: "Paracétamol",
+    classe: "Antalgique palier 1",
+    domain: "Commun",
+    status: "Classe autorisée",
+    indication: "Douleur légère à modérée, fièvre",
+    ci: "Insuffisance hépatique sévère, surdosage",
+    surveillance: "Dose maximale, cumul avec autres spécialités"
+  },
+  {
+    name: "Ibuprofène",
+    classe: "Antalgique palier 1",
+    domain: "Commun",
+    status: "Classe autorisée",
+    indication: "Douleur, inflammation, fièvre",
+    ci: "Ulcère, insuffisance rénale, grossesse ≥ 6 mois",
+    surveillance: "Durée courte, fonction rénale, risque digestif"
+  },
+  {
+    name: "Oméprazole",
+    classe: "IPP",
+    domain: "Commun",
+    status: "Classe autorisée",
+    indication: "RGO, ulcère gastrique",
+    ci: "Hypersensibilité",
+    surveillance: "Traitement prolongé"
+  },
+  {
+    name: "Lopéramide",
+    classe: "Antidiarrhéique",
+    domain: "Commun",
+    status: "Explicitement nommé",
+    indication: "Diarrhée aiguë",
+    ci: "Diarrhée infectieuse sévère",
+    surveillance: "Durée courte"
+  },
+  {
+    name: "Amoxicilline",
+    classe: "Antibiotique",
+    domain: "Commun",
+    status: "Conditionnel",
+    indication: "Angine streptocoque test +",
+    ci: "Allergie pénicilline",
+    surveillance: "Réaction allergique"
+  },
+  {
+    name: "Naloxone",
+    classe: "Antidote",
+    domain: "Urgences",
+    status: "Explicitement nommé",
+    indication: "Surdosage opioïdes",
+    ci: "Aucune en urgence",
+    surveillance: "Rechute respiratoire"
+  }
+];
+
+function display(list) {
+  const results = document.getElementById("results");
+  results.innerHTML = "";
+
+  list.forEach(item => {
+    const div = document.createElement("div");
+    div.className = "card";
+
+    let statusClass = "allowed";
+    if (item.status === "Conditionnel") statusClass = "restricted";
+    if (item.status === "Non autorisé") statusClass = "forbidden";
+
+    div.innerHTML = `
+      <h3>${item.name}</h3>
+      <p><strong>Classe :</strong> ${item.classe}</p>
+      <p><strong>Domaine :</strong> ${item.domain}</p>
+      <p class="${statusClass}">${item.status}</p>
+      <p><strong>Indication :</strong> ${item.indication}</p>
+      <p><strong>CI / EI principaux :</strong> ${item.ci}</p>
+      <p><strong>Surveillance :</strong> ${item.surveillance}</p>
+    `;
+
+    results.appendChild(div);
+  });
+}
+
+function filterData() {
+  const search = document.getElementById("search").value.toLowerCase();
+  const filter = document.getElementById("filter").value;
+
+  const filtered = data.filter(item => {
+    return (
+      item.name.toLowerCase().includes(search) &&
+      (filter === "" || item.domain === filter)
+    );
+  });
+
+  display(filtered);
+}
+
+document.getElementById("search").addEventListener("input", filterData);
+document.getElementById("filter").addEventListener("change", filterData);
+
+display(data);
+</script>
+
 </body>
 </html>
