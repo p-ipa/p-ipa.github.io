@@ -158,9 +158,13 @@
       text-decoration: underline;
     }
 .search-help {
-  font-size: 0.82rem;
-  color: var(--muted);
-  margin-top: 6px;
+  font-size: 0.75rem;
+  color: #9ca3af; /* gris plus clair */
+  margin-top: 4px;
+  font-style: italic;
+  white-space: nowrap; /* force sur une seule ligne */
+  overflow: hidden;
+  text-overflow: ellipsis; /* coupe si trop long */
 }
     
     @media (max-width: 980px) {
