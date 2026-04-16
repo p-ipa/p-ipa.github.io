@@ -3241,29 +3241,7 @@ function normalize(text) {
     return selected;
   }
 
-  function domainMatches(itemDomains, selectedMentions) {
-    if (selectedMentions.length === 0) {
-      return true;
-    }
-
-    if (selectedMentions.includes("Toutes les mentions") && itemDomains.includes("Toutes les mentions")) {
-      return true;
-    }
-
-    if (selectedMentions.includes("PCS") && (itemDomains.includes("PCS") || itemDomains.includes("Toutes les mentions"))) {
-      return true;
-    }
-
-    if (selectedMentions.includes("Urgences") && (itemDomains.includes("Urgences") || itemDomains.includes("Toutes les mentions"))) {
-      return true;
-    }
-
-    if (selectedMentions.includes("PSM") && (itemDomains.includes("PSM") || itemDomains.includes("Toutes les mentions"))) {
-      return true;
-    }
-
-    return false;
-  }
+function domainMatches(itemDomains, selectedMentions) {  if (selectedMentions.length === 0) {    return true;  }  return selectedMentions.some(mention => itemDomains.includes(mention));}
 
   function getBadgeClass(domain) {
     const d = normalize(domain);
