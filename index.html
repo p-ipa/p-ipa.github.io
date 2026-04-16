@@ -279,17 +279,20 @@
 .contact-button {
   display: inline-block;
   margin-top: 10px;
-  padding: 10px 16px;
+  padding: 12px 18px;
   border-radius: 10px;
-  background: #dcfce7; /* vert doux */
-  color: #166534;
-  border: 1px solid #86efac;
+  background: #16a34a; /* vert plus franc */
+  color: white;
+  border: none;
   font-weight: 700;
   text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 .contact-button:hover {
-  background: #bbf7d0;
+  background: #15803d;
+  transform: translateY(-1px);
 }
   
   @media (max-width: 980px) {
@@ -3373,6 +3376,7 @@ function normalize(text) {
 <footer class="site-footer">
   <p>Une erreur sur une molécule, une incohérence réglementaire ou une suggestion ?</p>
   <a href="https://tally.so/r/VL1JPM" target="_blank" rel="noopener noreferrer" class="contact-button">
+    ✉️ Signaler une erreur / contacter
   </a>
 </footer>
   
