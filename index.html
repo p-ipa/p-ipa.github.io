@@ -220,6 +220,9 @@
     color: #166534;
   }
 
+  .hl-status-mmo {  background: #bbf7d0;
+                  color: #14532d;}
+
   .hl-usage {
     display: inline-block;
     padding: 1px 6px;
@@ -3263,7 +3266,12 @@
       /Explicitement nommé(?:e)?|Explicitement autorisé(?:e)?/gi,
       '<span class="hl-status hl-status-explicit">$&</span>'
     );
-
+    
+    result = result.replace(
+      /Liste MMO de l'ANSM(?:e)?|liste mmo(?:e)?/gi,
+      '<span class="hl-status hl-status-mmo">$&</span>'
+    );
+    
     return result;
   }
 
